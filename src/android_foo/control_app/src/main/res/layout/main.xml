@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="7dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- The main content view -->
+            <FrameLayout
+                android:id="@+id/content_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/hud_fragment" />
+
+            <fragment
+                android:id="@+id/hud_fragment"
+                android:name="com.robotca.ControlApp.Fragments.HUDFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="64sp"
+                tools:layout="@layout/fragment_hud" />
+
+            <fragment
+                android:id="@+id/servo_fragment"
+                android:name="com.robotca.ControlApp.Fragments.ServoFragment"
+                android:layout_width="140dip"
+                android:layout_height="140dip"
+                tools:layout="@layout/fragment_servo_view"
+                android:layout_marginBottom="70dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp" />
+
+            <fragment
+                android:id="@+id/joystick_fragment"
+                android:name="com.robotca.ControlApp.Fragments.JoystickFragment"
+                android:layout_width="140dip"
+                android:layout_height="140dip"
+                tools:layout="@layout/fragment_joystick_view"
+                android:layout_alignTop="@+id/servo_fragment"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp" />
+
+        </RelativeLayout>
+        <!-- The navigation drawer -->
+        <ListView
+            android:id="@+id/left_drawer"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="#eee"
+            android:choiceMode="singleChoice"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:listSelector="@android:color/darker_gray" />
+    </android.support.v4.widget.DrawerLayout>
+
+</RelativeLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.robotca.ControlApp.Views.LaserScanView
+        android:id="@+id/laser_scan_renderer_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:layout_height="60dp">
+
+        <Button style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/recenter_laser_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/center"
+            android:elevation="0dp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:maxHeight="60dp" />
+
+        <CheckBox style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/lock_camera_checkbox"
+            android:text="@string/map_lock_camera_string"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textColorLink="@android:color/holo_blue_dark"
+            android:textAlignment="center"
+            android:textCursorDrawable="@android:color/holo_blue_dark"
+            android:layout_weight="1"
+            android:maxHeight="60dp" />
+
+        <Button style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/clear_waypoints_button"
+            android:enabled="false"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/map_clear_string"
+            android:layout_weight="1"
+            android:maxHeight="60dp" />
+    </LinearLayout>
+
+</RelativeLayout>
