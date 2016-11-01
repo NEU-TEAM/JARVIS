@@ -51,6 +51,7 @@ import com.robotca.ControlApp.Fragments.CameraViewFragment;
 import com.robotca.ControlApp.Fragments.HUDFragment;
 import com.robotca.ControlApp.Fragments.JoystickFragment;
 import com.robotca.ControlApp.Fragments.ServoFragment;
+import com.robotca.ControlApp.Fragments.VoiceFragment;
 import com.robotca.ControlApp.Fragments.LaserScanFragment;
 import com.robotca.ControlApp.Fragments.MapFragment;
 import com.robotca.ControlApp.Fragments.OverviewFragment;
@@ -97,6 +98,9 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
 
     // Fragment for the Servo
     private ServoFragment servoFragment;
+
+    // Fragment for the Servo
+    private VoiceFragment voiceFragment;
 
     // Fragment for the HUD
     private HUDFragment hudFragment;
@@ -255,6 +259,9 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
         // Find the Joystick fragment
         servoFragment = (ServoFragment) getFragmentManager().findFragmentById(R.id.servo_fragment);
 
+        // Find the Joystick fragment
+        voiceFragment = (VoiceFragment) getFragmentManager().findFragmentById(R.id.voice_fragment);
+
         // Create the RobotController
         controller = new RobotController(this);
 
@@ -309,6 +316,9 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
 
         if (servoFragment != null)
             servoFragment.stop();
+
+        if (voiceFragment != null)
+            voiceFragment.stop();
         onTrimMemory(TRIM_MEMORY_BACKGROUND);
         super.onStop();
 
@@ -328,6 +338,9 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
 
         if (servoFragment != null)
             servoFragment.stop();
+
+        if (voiceFragment != null)
+            voiceFragment.stop();
 
         onTrimMemory(TRIM_MEMORY_BACKGROUND);
         onTrimMemory(TRIM_MEMORY_COMPLETE);
@@ -378,6 +391,13 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
                 }
             });
 
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    voiceFragment.invalidate();
+                }
+            });
+
             //controller.setTopicName(PreferenceManager.getDefaultSharedPreferences(this).getString("edittext_joystick_topic", getString(R.string.joy_topic)));
             controller.initialize(nodeMainExecutor, nodeConfiguration);
 
@@ -388,6 +408,9 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
 
             // Add the JoystickView to the RobotController's odometry listener
             controller.addOdometryListener(servoFragment.getJoystickView());
+
+            // Add the JoystickView to the RobotController's odometry listener
+            controller.addOdometryListener(voiceFragment.getJoystickView());
 
             // Create and add a WarningSystem
             controller.addLaserScanListener(warningSystem = new WarningSystem(this));
@@ -456,6 +479,7 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
         Log.d(TAG, "Stopping Robot");
         joystickFragment.stop();
         servoFragment.stop();
+        voiceFragment.stop();
         return controller.stop(cancelMotionPlan);
     }
 
@@ -529,6 +553,10 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
             servoFragment.show();
         }
 
+        if (voiceFragment != null && getControlMode().ordinal() <= ControlMode.Tilt.ordinal()) {
+            voiceFragment.show();
+        }
+
         if (hudFragment != null) {
             hudFragment.show();
         }
@@ -592,6 +620,8 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
                     joystickFragment.hide();
                 if (servoFragment != null)
                     servoFragment.hide();
+                if (voiceFragment != null)
+                    voiceFragment.hide();
                 if (hudFragment != null) {
                     hudFragment.hide();
 
@@ -612,6 +642,8 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
                     joystickFragment.hide();
                 if (servoFragment != null)
                     servoFragment.hide();
+                if (voiceFragment != null)
+                    voiceFragment.hide();
                 if (hudFragment != null) {
                     hudFragment.hide();
 
@@ -805,12 +837,16 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
         if (servoFragment.getControlMode() == controlMode)
             return;
 
+        if (voiceFragment.getControlMode() == controlMode)
+            return;
+
         // Lock the orientation for tilt controls
         lockOrientation(controlMode == ControlMode.Tilt);
 
         // Notify the Joystick on the new ControlMode
         joystickFragment.setControlMode(controlMode);
         servoFragment.setControlMode(controlMode);
+        voiceFragment.setControlMode(controlMode);
         hudFragment.toggleEmergencyStopUI(true);
 
         // If the ControlMode has an associated RobotPlan, run the plan

@@ -21,4 +21,10 @@ Assistant Professor
 University of South Carolina
 
 #Modify Note
-A servo control function, to help control 2DOF servo driven platform.
+This software have been modified to control NEU household robot.
+A servo control function was added to help control 2DOF servo driven platform.
+
+Author:
+Zhipeng Dong
+Ph.D candidate
+https://github.com/DrawZeroPoint

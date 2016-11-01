@@ -581,7 +581,7 @@ public class JoystickView extends RelativeLayout implements AnimationListener,
             // TODO(munjaldesai): Need to throw an exception/error. For now the touch events will not be processed.
             this.setOnTouchListener(null);
         }
-        parentSize = mainLayout.getWidth();
+        parentSize = mainLayout.getHeight();
         if (parentSize < 200 || parentSize > 400) {
             // TODO: Need to throw an exception for attempting to create
             // a virtual joystick that is either too small or too big. For now the
@@ -590,7 +590,7 @@ public class JoystickView extends RelativeLayout implements AnimationListener,
         }
         // Calculate the center coordinates (radius) of parent container
         // (mainLayout).
-        joystickRadius = mainLayout.getWidth() / 2;
+        joystickRadius = mainLayout.getHeight() / 2;
         normalizingMultiplier = BOX_TO_CIRCLE_RATIO / (parentSize / 2);
         // Calculate the radius of the center divet as a normalize value.
         deadZoneRatio = THUMB_DIVET_RADIUS * normalizingMultiplier;

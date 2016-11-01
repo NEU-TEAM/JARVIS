@@ -27,26 +27,41 @@
                 android:layout_height="64sp"
                 tools:layout="@layout/fragment_hud" />
 
-            <fragment
-                android:id="@+id/servo_fragment"
-                android:name="com.robotca.ControlApp.Fragments.ServoFragment"
-                android:layout_width="140dip"
-                android:layout_height="140dip"
-                tools:layout="@layout/fragment_servo_view"
-                android:layout_marginBottom="70dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="5dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/content_frame"
+                android:baselineAligned="false" >
 
-            <fragment
-                android:id="@+id/joystick_fragment"
-                android:name="com.robotca.ControlApp.Fragments.JoystickFragment"
-                android:layout_width="140dip"
-                android:layout_height="140dip"
-                tools:layout="@layout/fragment_joystick_view"
-                android:layout_alignTop="@+id/servo_fragment"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="5dp" />
+                <fragment
+                    android:id="@+id/servo_fragment"
+                    android:name="com.robotca.ControlApp.Fragments.ServoFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_servo_view"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="60dp" />
+
+                <fragment
+                    android:id="@+id/voice_fragment"
+                    android:name="com.robotca.ControlApp.Fragments.VoiceFragment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_voice_view"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="100dp" />
+
+                <fragment
+                    android:id="@+id/joystick_fragment"
+                    android:name="com.robotca.ControlApp.Fragments.JoystickFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_joystick_view"
+                    android:layout_marginEnd="10dp" />
+
+            </LinearLayout>
 
         </RelativeLayout>
         <!-- The navigation drawer -->

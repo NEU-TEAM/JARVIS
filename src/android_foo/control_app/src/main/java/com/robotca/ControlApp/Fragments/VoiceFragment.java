@@ -1,9 +1,7 @@
 package com.robotca.ControlApp.Fragments;
 
 /**
- * Fragment containing the ServoView.
- *
- * Created by Zhipeng Dong on 10/30/16.
+ * Created by Zhipeng Dong on 16-10-31.
  */
 
 import android.app.Fragment;
@@ -15,18 +13,17 @@ import android.view.ViewGroup;
 
 import com.robotca.ControlApp.Core.ControlMode;
 import com.robotca.ControlApp.R;
-import com.robotca.ControlApp.Views.ServoView;
+import com.robotca.ControlApp.Views.VoiceView;
 
-
-public class ServoFragment extends Fragment {
-    private ServoView virtualJoystick;
+public class VoiceFragment extends Fragment {
+    private VoiceView virtualVoice;
     private View view;
     private ControlMode controlMode = ControlMode.Joystick;
 
     /**
      * Default Constructor.
      */
-    public ServoFragment() {
+    public VoiceFragment() {
     }
 
     /**
@@ -38,21 +35,20 @@ public class ServoFragment extends Fragment {
 
         // Inflate the view if needed
         if (view == null) {
-            view = inflater.inflate(R.layout.fragment_servo_view, container, false);
+            view = inflater.inflate(R.layout.fragment_voice_view, container, false);
 
-            // Grab the JoystickView and set its topic
-            virtualJoystick = (ServoView) view.findViewById(R.id.servo_view);
+            // Grab the VoiceView and set its topic
+            virtualVoice = (VoiceView) view.findViewById(R.id.voice_view);
         }
 
         return view;
     }
-
     /**
-     * Returns the ServoView
-     * @return The ServoView
+     * Returns the virtualVoice
+     * @return The virtualVoice
      */
-    public ServoView getJoystickView() {
-        return virtualJoystick;
+    public VoiceView getJoystickView() {
+        return virtualVoice;
     }
 
     /**
@@ -73,16 +69,7 @@ public class ServoFragment extends Fragment {
     }
 
     /**
-     * Tests whether the Joystick supports accelerometer control.
-     * @return True if the Joystick supports accelerometer control, false otherwise
-     */
-    @SuppressWarnings("unused") // Maybe later...
-    public boolean hasAccelerometer() {
-        return virtualJoystick.hasAccelerometer();
-    }
-
-    /**
-     * Invalidate the Fragment, updating the visibility of the Joystick based on the ControlMode.
+     * Invalidate the Fragment, updating the visibility of the Voice Button based on the ControlMode.
      *
      */
     public void invalidate() {
@@ -101,19 +88,18 @@ public class ServoFragment extends Fragment {
                 break;
         }
 
-        virtualJoystick.setControlMode(controlMode);
-        virtualJoystick.controlSchemeChanged();
+        virtualVoice.setControlMode(controlMode);
     }
 
     /**
-     * Stops the ServoFragment.
+     * Stops the VoiceFragment.
      */
     public void stop() {
-        virtualJoystick.stop();
+        virtualVoice.stop();
     }
 
     /**
-     * Shows the ServoFragment.
+     * Shows the VoiceFragment.
      */
     public void show(){
         getFragmentManager()
@@ -123,12 +109,12 @@ public class ServoFragment extends Fragment {
     }
 
     /**
-     * Hides the ServoFragment.
+     * Hides the VoiceFragment.
      */
     public void hide(){
         getFragmentManager()
                 .beginTransaction()
                 .hide(this)
                 .commit();
-    }
+    }    
 }

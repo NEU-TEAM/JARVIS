@@ -35,7 +35,7 @@
         <activity
             android:name=".ControlApp"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Holo.Light"
+            android:theme="@style/JarvisTheme"
             android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".SplashActivity"

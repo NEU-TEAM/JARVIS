@@ -60,7 +60,8 @@
         android:orientation="vertical"
         android:layout_toEndOf="@id/hud_gps_icon"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="RelativeOverlap">
 
         <TextView
             android:id="@+id/hud_gps_lat"
