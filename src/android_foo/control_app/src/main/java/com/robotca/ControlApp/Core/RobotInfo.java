@@ -27,7 +27,9 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
     /** Bundle key for joystick topic */
     public static final String JOYSTICK_TOPIC_KEY = "JOYSTICK_TOPIC_KEY";
     /** Bundle key for servo topic */
-    public static final String SERVO_TOPIC_KEY = "Servo_TOPIC_KEY";
+    public static final String SERVO_TOPIC_KEY = "SERVO_TOPIC_KEY";
+    /** Bundle key for servo topic */
+    public static final String USER_COMMAND_TOPIC_KEY = "USER_COMMAND_TOPIC_KEY";
     /** Bundle key for laser scan topic */
     public static final String LASER_SCAN_TOPIC_KEY = "LASER_SCAN_TOPIC_KEY";
     /** Bundle key for camera topic */
@@ -59,6 +61,7 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
     // Topic names
     private String joystickTopic;
     private String servoTopic;
+    private String userCommandTopic;
     private String cameraTopic;
     private String laserTopic;
     private String navsatTopic;
@@ -81,6 +84,7 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
         masterUriString = "http://192.168.1.101:11311";
         joystickTopic = "/joy_teleop/cmd_vel";
         servoTopic = "/joy_teleop/servo";
+        userCommandTopic = "/jarvis/user_command";
         cameraTopic = "/rgb/image/compressed";
         laserTopic = "/scan";
         navsatTopic = "/navsat/fix";
@@ -108,7 +112,8 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
      * @param cameraTopic CameraTopic name for this RobotInfo
      */
     public RobotInfo(UUID id, String name, String masterUriString, String joystickTopic,
-                     String servoTopic, String laserTopic, String cameraTopic,String navsatTopic,
+                     String servoTopic, String userCommandTopic, String laserTopic,
+                     String cameraTopic,String navsatTopic,
                      String odometryTopic, String poseTopic, boolean reverseLaserScan,
                      boolean invertX, boolean invertY, boolean invertAngularVelocity) {
         this.id = id;
@@ -116,6 +121,7 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
         this.masterUriString = masterUriString;
         this.joystickTopic = joystickTopic;
         this.servoTopic = servoTopic;
+        this.userCommandTopic = userCommandTopic;
         this.laserTopic = laserTopic;
         this.cameraTopic = cameraTopic;
         this.navsatTopic = navsatTopic;
@@ -211,6 +217,21 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
      */
     public void setJoystickTopic(String joystickTopic) {
         this.joystickTopic = joystickTopic;
+    }
+
+    /**
+     * @return The userCommandTopic name of this RobotInfo
+     */
+    public String getUserCommandTopic() {
+        return userCommandTopic;
+    }
+
+    /**
+     * Sets the userCommandTopic for this RobotInfo.
+     * @param userCommandTopic The new userCommandTopic
+     */
+    public void setUserCommandTopic(String userCommandTopic) {
+        this.userCommandTopic = userCommandTopic;
     }
 
     /**
@@ -405,6 +426,7 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
         masterUriString = bundle.getString(MASTER_URI_KEY, "http://192.168.1.101:11311");
         joystickTopic = bundle.getString(JOYSTICK_TOPIC_KEY, "/joy_teleop/cmd_vel");
         servoTopic = bundle.getString(SERVO_TOPIC_KEY, "/joy_teleop/servo");
+        userCommandTopic = bundle.getString(USER_COMMAND_TOPIC_KEY, "/jarvis/user_command");
         cameraTopic = bundle.getString(CAMERA_TOPIC_KEY, "/rgb/image/compressed");
         laserTopic = bundle.getString(LASER_SCAN_TOPIC_KEY, "/scan");
         navsatTopic = bundle.getString(NAVSAT_TOPIC_KEY, "/navsat/fix");
@@ -419,6 +441,7 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
     public void load(@NonNull SharedPreferences prefs) {
         joystickTopic = prefs.getString(RobotStorage.getPreferenceKey(JOYSTICK_TOPIC_KEY), "/joy_teleop/cmd_vel");
         servoTopic = prefs.getString(RobotStorage.getPreferenceKey(SERVO_TOPIC_KEY), "/joy_teleop/servo");
+        userCommandTopic = prefs.getString(RobotStorage.getPreferenceKey(USER_COMMAND_TOPIC_KEY), "/jarvis/user_command");
         cameraTopic = prefs.getString(RobotStorage.getPreferenceKey(CAMERA_TOPIC_KEY), "/rgb/image/compressed");
         laserTopic = prefs.getString(RobotStorage.getPreferenceKey(LASER_SCAN_TOPIC_KEY), "/scan");
         navsatTopic = prefs.getString(RobotStorage.getPreferenceKey(NAVSAT_TOPIC_KEY), "/navsat/fix");
@@ -437,6 +460,7 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
         bundle.putString(MASTER_URI_KEY, masterUriString);
         bundle.putString(JOYSTICK_TOPIC_KEY, joystickTopic);
         bundle.putString(SERVO_TOPIC_KEY, servoTopic);
+        bundle.putString(USER_COMMAND_TOPIC_KEY, userCommandTopic);
         bundle.putString(CAMERA_TOPIC_KEY, cameraTopic);
         bundle.putString(LASER_SCAN_TOPIC_KEY, laserTopic);
         bundle.putString(NAVSAT_TOPIC_KEY, navsatTopic);
@@ -451,6 +475,7 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
     public void save(@NonNull SharedPreferences.Editor prefs) {
         prefs.putString(RobotStorage.getPreferenceKey(JOYSTICK_TOPIC_KEY), joystickTopic);
         prefs.putString(RobotStorage.getPreferenceKey(SERVO_TOPIC_KEY), servoTopic);
+        prefs.putString(RobotStorage.getPreferenceKey(USER_COMMAND_TOPIC_KEY), userCommandTopic);
         prefs.putString(RobotStorage.getPreferenceKey(CAMERA_TOPIC_KEY), cameraTopic);
         prefs.putString(RobotStorage.getPreferenceKey(LASER_SCAN_TOPIC_KEY), laserTopic);
         prefs.putString(RobotStorage.getPreferenceKey(NAVSAT_TOPIC_KEY), navsatTopic);

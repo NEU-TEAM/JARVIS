@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.robotca.ControlApp.ControlApp;
+import com.robotca.ControlApp.Core.AudioPublisher;
 import com.robotca.ControlApp.Core.Plans.RobotPlan;
 import com.robotca.ControlApp.R;
 
@@ -29,6 +30,7 @@ import geometry_msgs.Point;
 import geometry_msgs.Pose;
 import geometry_msgs.Quaternion;
 import geometry_msgs.Twist;
+import audio_common_msgs.AudioData;
 import nav_msgs.Odometry;
 import sensor_msgs.CompressedImage;
 import sensor_msgs.LaserScan;
@@ -69,6 +71,9 @@ public class RobotController implements NodeMain, Savable {
     private Publisher<Int32MultiArray> servoPublisher;
     // Contains the current velocity plan to be published
     private Int32MultiArray currentServoCommand;
+
+    // Class for publish voice
+    private AudioPublisher audioPublisher;
 
     // Subscriber to NavSatFix data
     private Subscriber<NavSatFix> navSatFixSubscriber;
@@ -355,8 +360,8 @@ public class RobotController implements NodeMain, Savable {
 
     /**
      * Sets the next values of the next velocity to publish.
-     * @param pitch servo pitch angle incracement
-     * @param yaw servo yaw angle
+     * @param pitch servo pitch angle increasement
+     * @param yaw servo yaw angle increasement
      */
     public void publishServo(double pitch, double yaw) {
         if (currentServoCommand != null) {
@@ -408,6 +413,15 @@ public class RobotController implements NodeMain, Savable {
         publishServo(pitch, yaw);
     }
 
+    public void publishVoice(boolean isPub) {
+        if (isPub) {
+            audioPublisher.play();
+        }
+        else {
+            audioPublisher.pause();
+        }
+    }
+
     /**
      * @return The default node name for the RobotController
      */
@@ -452,6 +466,10 @@ public class RobotController implements NodeMain, Savable {
         String servoTopic = PreferenceManager.getDefaultSharedPreferences(context)
                 .getString(context.getString(R.string.prefs_servo_topic_edittext_key),
                         context.getString(R.string.servo_topic));
+
+        String userCommandTopic = PreferenceManager.getDefaultSharedPreferences(context)
+                .getString(context.getString(R.string.prefs_user_command_topic_edittext_key),
+                        context.getString(R.string.user_command_topic));
 
         String navSatTopic = PreferenceManager.getDefaultSharedPreferences(context)
                 .getString(context.getString(R.string.prefs_navsat_topic_edittext_key),
@@ -527,7 +545,11 @@ public class RobotController implements NodeMain, Savable {
             publishVelocity = false;
         }
 
-
+        if (audioPublisher == null
+                || !userCommandTopic.equals(audioPublisher.getDefaultNodeName().toString())) {
+            audioPublisher = new AudioPublisher(userCommandTopic);
+            audioPublisher.onStart(this.connectedNode);
+        }
 
         // Refresh the NavSat Subscriber
         if (navSatFixSubscriber == null
@@ -631,6 +653,10 @@ public class RobotController implements NodeMain, Savable {
 
         if (movePublisher != null) {
             movePublisher.shutdown();
+        }
+
+        if (audioPublisher != null) {
+            audioPublisher.onShutdown();
         }
 
         if (navSatFixSubscriber != null) {

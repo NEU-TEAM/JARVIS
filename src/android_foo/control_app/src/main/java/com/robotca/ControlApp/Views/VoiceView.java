@@ -17,36 +17,29 @@ import com.robotca.ControlApp.ControlApp;
 import com.robotca.ControlApp.Core.ControlMode;
 import com.robotca.ControlApp.R;
 
+import org.ros.node.ConnectedNode;
 import org.ros.message.MessageListener;
 
-public class VoiceView extends RelativeLayout implements MessageListener<nav_msgs.Odometry>{
+public class VoiceView extends RelativeLayout implements MessageListener<nav_msgs.Odometry> {
     /**
      * TAG Debug Log tag.
      */
     private static final String TAG = "VoiceView";
 
     private static final int INVALID_POINTER_ID = -1;
-    /**
-     * mainLayout The parent layout that contains all the elements of the virtual
-     * joystick.
-     */
-//    private RelativeLayout mainLayout;
 
-    public ImageButton imageButton;// = (ImageButton)findViewById(R.id.voice_button);
+    public ImageButton imageButton;
 
     private boolean clickState = false;
 
-    /**
-     * pointerId Used to keep track of the contact that initiated the interaction
-     * with the virtual joystick. All other contacts are ignored.
-     */
+    public ConnectedNode connectedNode;
+
     private int pointerId = INVALID_POINTER_ID;
 
     /**
      * Used for tilt sensor control.
      */
     private ControlMode controlMode = ControlMode.Joystick;
-
 
     public VoiceView(Context context) {
         super(context);
@@ -72,7 +65,6 @@ public class VoiceView extends RelativeLayout implements MessageListener<nav_msg
     private void init(Context context) {
         initVirtualVoiceButton(context);
     }
-
 
 
     @Override
@@ -109,7 +101,8 @@ public class VoiceView extends RelativeLayout implements MessageListener<nav_msg
             case MotionEvent.ACTION_UP: {
                 // Check if the contact that initiated the interaction is up.
                 //noinspection deprecation
-                if ((action & MotionEvent.ACTION_POINTER_ID_MASK) >> MotionEvent.ACTION_POINTER_ID_SHIFT == pointerId) {
+                if ((action & MotionEvent.ACTION_POINTER_ID_MASK)
+                        >> MotionEvent.ACTION_POINTER_ID_SHIFT == pointerId) {
                     onContactUp();
                 }
                 break;
@@ -138,7 +131,6 @@ public class VoiceView extends RelativeLayout implements MessageListener<nav_msg
         setGravity(Gravity.CENTER);
 
         LayoutInflater.from(context).inflate(R.layout.virtual_voice_button, this, true);
-//        mainLayout = (RelativeLayout) findViewById(R.id.fragment_voice_view);
         imageButton = (ImageButton)findViewById(R.id.voice_button);
         imageButton.setImageResource(R.drawable.voice_off);
         clickState = false;
@@ -158,6 +150,7 @@ public class VoiceView extends RelativeLayout implements MessageListener<nav_msg
     private void onContactDown() {
         //TODO start record voice
         imageButton.setImageResource(R.drawable.voice_on);
+        publishVoice(true);
     }
 
     /**
@@ -167,10 +160,14 @@ public class VoiceView extends RelativeLayout implements MessageListener<nav_msg
     private void onContactUp() {
         // TODO send voice
         imageButton.setImageResource(R.drawable.voice_off);
+        publishVoice(false);
         // Reset the pointer id.
         pointerId = INVALID_POINTER_ID;
     }
 
+    private void publishVoice(boolean isPub) {
+        ((ControlApp) getContext()).getRobotController().publishVoice(isPub);
+    }
 
     public void setControlMode(ControlMode controlMode) {
 

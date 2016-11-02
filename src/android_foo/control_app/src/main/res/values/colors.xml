@@ -10,5 +10,9 @@
     <color name="primary_text_material_light">#283593</color>
     <color name="primary_text_material_dark">#ffffff</color>
     <color name="nbc">#313fd6</color>
+    <color name="primary_text_holo_light">#06067a</color>
+    <color name="secondary_text_holo_light">#565454</color>
+    <color name="primary_text_holo_dark">#f3f3f3</color>
+    <color name="secondary_text_holo_dark">#bebebe</color>
 
 </resources>

@@ -33,7 +33,8 @@ public class RobotChooserTest {
 
     @Before
     public void setUp() throws Exception {
-        robotInfo = new RobotInfo(UUID.randomUUID(), "TestRobotInfo", "TestMasterURI", null, null, null, null, null, null, null, false, false, false, false);
+        robotInfo = new RobotInfo(UUID.randomUUID(), "TestRobotInfo", "TestMasterURI",
+                null, null, null, null, null, null, null, null, false, false, false, false);
     }
 
     @Test

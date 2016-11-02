@@ -32,7 +32,8 @@ buildscript {
 }
 
 apply plugin: 'catkin'
-
+// Added from audio module
+//apply plugin: 'com.android.library'
 
 allprojects {
     /* A github url provides a good standard unique name for your project */

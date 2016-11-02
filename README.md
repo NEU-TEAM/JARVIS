@@ -23,6 +23,7 @@ University of South Carolina
 #Modify Note
 This software have been modified to control NEU household robot.
 A servo control function was added to help control 2DOF servo driven platform.
+Auido input function will be added to let user control the robot by voice command.
 
 Author:
 Zhipeng Dong

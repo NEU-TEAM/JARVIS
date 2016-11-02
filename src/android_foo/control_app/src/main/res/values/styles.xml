@@ -45,8 +45,13 @@
         <item name="android:colorForeground" tools:ignore="PrivateResource">@color/foreground_material_light</item>
         <item name="android:windowBackground">@color/cardview_light_background</item>
         <item name="android:navigationBarColor">@android:color/holo_blue_dark</item>
-        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+        <item name="android:statusBarColor">@color/accent_material_light_2</item>
         <item name="android:toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
+        <item name="android:colorPrimaryDark">@color/accent_material_light_2</item>
+        <item name="android:textColorPrimary">@color/primary_text_holo_light</item>
+        <item name="android:textColorSecondary">@color/secondary_text_holo_light</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_holo_dark</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_holo_dark</item>
     </style>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -56,6 +61,7 @@
         <item name="android:toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
         <item name="android:textColorPrimary">@color/accent_material_light_2</item>
         <item name="android:textColorPrimaryInverse">@color/primary_text_material_dark</item>
+        <item name="android:statusBarColor">@color/accent_material_light_2</item>
     </style>
 
 </resources>

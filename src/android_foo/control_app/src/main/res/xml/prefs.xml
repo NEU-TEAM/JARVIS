@@ -28,6 +28,13 @@
             android:title="@string/servo_pref_title" />
 
         <com.robotca.ControlApp.Views.BetterEditTextPreference
+            android:defaultValue="@string/user_command_topic"
+            android:key="@string/prefs_user_command_topic_edittext_key"
+            android:singleLine="true"
+            android:summary="@string/user_command_pref_summary"
+            android:title="@string/user_command_pref_title" />
+
+        <com.robotca.ControlApp.Views.BetterEditTextPreference
             android:defaultValue="@string/camera_topic"
             android:key="@string/prefs_camera_topic_edittext_key"
             android:singleLine="true"

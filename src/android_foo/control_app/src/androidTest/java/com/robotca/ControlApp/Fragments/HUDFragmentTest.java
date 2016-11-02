@@ -29,7 +29,8 @@ public class HUDFragmentTest {
 
     static
     {
-        ControlApp.ROBOT_INFO = new RobotInfo(null, "HUDTestRobotInfo", "HUDMasterURI", null, null, null, null, null, null, null, false, false, false, false);
+        ControlApp.ROBOT_INFO = new RobotInfo(null, "HUDTestRobotInfo", "HUDMasterURI",
+                null, null, null, null, null, null, null, null, false, false, false, false);
     }
 
     private static final String TAG = "HUDFragmentTest";

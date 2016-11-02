@@ -43,6 +43,13 @@ dependencies {
     compile 'org.ros.android_core:android_15:[0.2,0.3)'
     compile 'com.github.rosjava.android_extras:gingerbread:[0.2,0.3)'
     compile 'org.ros.rosjava_messages:tf2_msgs:[0.5,0.6)'
+
+    // Added from audio module
+    compile('org.ros.rosjava_messages:audio_common_msgs:0.2.7') {
+        exclude group: 'junit'
+        exclude group: 'xml-apis'
+    }
+
     compile 'com.google.code.gson:gson:2.5'
     compile 'com.android.support:support-v13:23.2.0'
     compile 'com.android.support:appcompat-v7:23.2.0'
@@ -58,6 +65,10 @@ dependencies {
 }
 
 apply plugin: 'com.android.application'
+
+// Added from audio module
+//apply plugin: 'com.android.library'
+
 
 android {
     compileSdkVersion 23
@@ -75,6 +86,18 @@ android {
         debug { java.srcDirs = ['src/debug/java'] }
     }
     productFlavors {
+    }
+
+    // Added from audio module
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 

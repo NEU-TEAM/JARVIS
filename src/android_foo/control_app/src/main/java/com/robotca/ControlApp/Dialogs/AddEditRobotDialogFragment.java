@@ -43,6 +43,7 @@ public class AddEditRobotDialogFragment extends DialogFragment {
     private View mAdvancedOptionsView;
     private EditText mJoystickTopicEditTextView;
     private EditText mServoTopicEditTextView;
+    private EditText mUserCommandTopicEditTextView;
     private EditText mLaserScanTopicEditTextView;
     private EditText mCameraTopicEditTextView;
     private EditText mNavSatTopicEditTextView;
@@ -95,6 +96,7 @@ public class AddEditRobotDialogFragment extends DialogFragment {
         mAdvancedOptionsView = v.findViewById(R.id.advanced_options_view);
         mJoystickTopicEditTextView = (EditText) v.findViewById(R.id.joystick_topic_edit_text);
         mServoTopicEditTextView = (EditText) v.findViewById(R.id.servo_topic_edit_text);
+        mUserCommandTopicEditTextView = (EditText) v.findViewById(R.id.user_command_topic_edit_text);
         mLaserScanTopicEditTextView = (EditText) v.findViewById(R.id.laser_scan_edit_view);
         mCameraTopicEditTextView = (EditText) v.findViewById(R.id.camera_topic_edit_view);
         mNavSatTopicEditTextView = (EditText) v.findViewById(R.id.navsat_topic_edit_view);
@@ -121,6 +123,7 @@ public class AddEditRobotDialogFragment extends DialogFragment {
 
         mJoystickTopicEditTextView.setText(mInfo.getJoystickTopic());
         mServoTopicEditTextView.setText(mInfo.getServoTopic());
+        mUserCommandTopicEditTextView.setText(mInfo.getUserCommandTopic());
         mLaserScanTopicEditTextView.setText(mInfo.getLaserTopic());
         mCameraTopicEditTextView.setText(mInfo.getCameraTopic());
         mNavSatTopicEditTextView.setText(mInfo.getNavSatTopic());
@@ -141,6 +144,7 @@ public class AddEditRobotDialogFragment extends DialogFragment {
                         String masterUri = mMasterUriEditTextView.getText().toString().trim();
                         String joystickTopic = mJoystickTopicEditTextView.getText().toString().trim();
                         String servoTopic = mServoTopicEditTextView.getText().toString().trim();
+                        String userCommandTopic = mUserCommandTopicEditTextView.getText().toString().trim();
                         String laserScanTopic = mLaserScanTopicEditTextView.getText().toString().trim();
                         String cameraTopic = mCameraTopicEditTextView.getText().toString().trim();
                         String navsatTopic = mNavSatTopicEditTextView.getText().toString().trim();
@@ -158,8 +162,9 @@ public class AddEditRobotDialogFragment extends DialogFragment {
                             Toast.makeText(getActivity(), "All topic names are required", Toast.LENGTH_SHORT).show();
                         } else if (!name.equals("")) {
                             mListener.onAddEditDialogPositiveClick(new RobotInfo(mInfo.getId(), name,
-                                    masterUri, joystickTopic, servoTopic, laserScanTopic, cameraTopic, navsatTopic,
-                                    odometryTopic, poseTopic, reverseLaserScan, invertX, invertY, invertAngVel), mPosition);
+                                    masterUri, joystickTopic, servoTopic, userCommandTopic, laserScanTopic,
+                                    cameraTopic, navsatTopic, odometryTopic, poseTopic, reverseLaserScan,
+                                    invertX, invertY, invertAngVel), mPosition);
                             dialog.dismiss();
                         } else {
                             Toast.makeText(getActivity(), "Robot name required", Toast.LENGTH_SHORT).show();

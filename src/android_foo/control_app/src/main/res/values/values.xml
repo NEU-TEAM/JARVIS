@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="foreground_material_light">#086898</color>
+    <color name="foreground_material_light">#0895dc</color>
     <color name="accent_material_light">#184ab6</color>
     <color name="primary_dark_material_dark">#181b70</color>
     <color name="primary_material_dark">#3f51b5</color>
