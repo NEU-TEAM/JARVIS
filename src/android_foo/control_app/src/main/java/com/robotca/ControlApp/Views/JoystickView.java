@@ -723,7 +723,7 @@ public class JoystickView extends RelativeLayout implements AnimationListener,
         magnitudeText.setTextColor(0xFFFFFFFF);
         intensity = (ImageView) findViewById(R.id.intensity);
         thumbDivet = (ImageView) findViewById(R.id.thumb_divet);
-        thumbDivet.setColorFilter(Color.argb(255,31,177,222));
+
         orientationWidget = new ImageView[24];
         orientationWidget[0] = (ImageView) findViewById(R.id.widget_0_degrees);
         orientationWidget[1] = (ImageView) findViewById(R.id.widget_15_degrees);

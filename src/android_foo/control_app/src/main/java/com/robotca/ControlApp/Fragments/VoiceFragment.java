@@ -6,17 +6,19 @@ package com.robotca.ControlApp.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.robotca.ControlApp.Core.ControlMode;
 import com.robotca.ControlApp.R;
 import com.robotca.ControlApp.Views.VoiceView;
 
 public class VoiceFragment extends Fragment {
-    private VoiceView virtualVoice;
+    private VoiceView virtualVoiceView;
     private View view;
     private ControlMode controlMode = ControlMode.Joystick;
 
@@ -25,6 +27,7 @@ public class VoiceFragment extends Fragment {
      */
     public VoiceFragment() {
     }
+
 
     /**
      * Create this Fragments View.
@@ -35,20 +38,31 @@ public class VoiceFragment extends Fragment {
 
         // Inflate the view if needed
         if (view == null) {
-            view = inflater.inflate(R.layout.fragment_voice_view, container, false);
+            view = inflater.inflate(R.layout.fragment_voice_view, container, true);
 
             // Grab the VoiceView and set its topic
-            virtualVoice = (VoiceView) view.findViewById(R.id.voice_view);
+            virtualVoiceView = (VoiceView) view.findViewById(R.id.voice_view);
+
+            (view.findViewById(R.id.voice_button)).setOnClickListener(
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            virtualVoiceView.onContactChanged();
+                        }
+                    }
+            );
         }
 
         return view;
     }
+
+
     /**
-     * Returns the virtualVoice
-     * @return The virtualVoice
+     * Returns the virtualVoiceView
+     * @return The virtualVoiceView
      */
     public VoiceView getJoystickView() {
-        return virtualVoice;
+        return virtualVoiceView;
     }
 
     /**
@@ -88,14 +102,14 @@ public class VoiceFragment extends Fragment {
                 break;
         }
 
-        virtualVoice.setControlMode(controlMode);
+        virtualVoiceView.setControlMode(controlMode);
     }
 
     /**
      * Stops the VoiceFragment.
      */
     public void stop() {
-        virtualVoice.stop();
+        virtualVoiceView.stop();
     }
 
     /**
@@ -116,5 +130,5 @@ public class VoiceFragment extends Fragment {
                 .beginTransaction()
                 .hide(this)
                 .commit();
-    }    
+    }
 }

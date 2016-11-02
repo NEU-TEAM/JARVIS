@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="foreground_material_light">#086898</color>
-    <color name="accent_material_light">#174b7c</color>
+    <color name="accent_material_light">#184ab6</color>
     <color name="primary_dark_material_dark">#181b70</color>
     <color name="primary_material_dark">#3f51b5</color>
     <color name="accent_material_dark">#4f68f2</color>
+    <color name="primary_dark_material_light">#eeeaea</color>
+    <color name="primary_text_default_material_light">#fe204dc1</color>
+    <color name="primary_text_default_material_dark">#ffffff</color>
 </resources>

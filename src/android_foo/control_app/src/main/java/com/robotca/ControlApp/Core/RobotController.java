@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.lang.Math;
-import java.lang.Number;
 
 import std_msgs.Int32MultiArray;
 import geometry_msgs.Point;

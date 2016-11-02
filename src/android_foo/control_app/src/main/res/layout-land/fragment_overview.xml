@@ -2,34 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:baselineAligned="false"
     android:orientation="vertical">
 
-<RelativeLayout
-    android:layout_weight="1"
-    android:layout_width="fill_parent"
-    android:layout_height="0dp">
-
-    <org.ros.android.view.RosImageView
-        android:id="@+id/camera_view"
+    <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"/>
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/noCameraTextView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:elevation="3dp"
-        android:gravity="center"
-        android:text="@string/noCamera"
-        android:textSize="36sp" />
+        <org.ros.android.view.RosImageView
+            android:id="@+id/camera_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="120dp" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/noCameraTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:gravity="top|center"
+            android:text="@string/noCamera"
+            android:textSize="20sp"
+            android:paddingTop="80dp" />
+
+    </RelativeLayout>
 
     <FrameLayout
         android:id="@+id/laser_scan_placeholder"
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.31" />
+        android:layout_height="match_parent"
+        android:paddingTop="5dp" />
 
 </LinearLayout>

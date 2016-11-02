@@ -7,5 +7,8 @@
     <color name="emergency_stop_gray">#FFAAAAAA</color>
     <color name="accent_material_light_1">#0b30ac</color>
     <color name="accent_material_light_2">#1820b2</color>
+    <color name="primary_text_material_light">#283593</color>
+    <color name="primary_text_material_dark">#ffffff</color>
+    <color name="nbc">#313fd6</color>
 
 </resources>

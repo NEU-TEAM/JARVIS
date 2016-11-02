@@ -8,7 +8,7 @@
 
     <org.ros.android.view.RosImageView
         android:id="@+id/camera_fragment_camera_view"
-        android:layout_height="320dp"
+        android:layout_height="match_parent"
         android:layout_width="fill_parent"
         app:srcCompat="@android:color/holo_blue_dark"
         android:layout_alignParentTop="true"
@@ -18,8 +18,9 @@
         android:id="@+id/noCameraTextView"
         android:text="@string/noCamera"
         android:elevation="3dp"
-        android:textSize="36sp"
-        android:gravity="center"
+        android:textSize="20sp"
+        android:gravity="top|center"
         android:layout_width="fill_parent"
-        android:layout_height="400dp" />
+        android:layout_height="match_parent"
+        android:paddingTop="60dp" />
 </RelativeLayout>

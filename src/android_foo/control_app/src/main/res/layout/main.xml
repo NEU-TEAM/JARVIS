@@ -48,10 +48,12 @@
                     android:name="com.robotca.ControlApp.Fragments.VoiceFragment"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_voice_view"
+                    android:layout="@layout/fragment_voice_view"
                     android:layout_gravity="bottom"
                     android:layout_weight="1"
-                    android:layout_marginBottom="100dp" />
+                    android:layout_marginBottom="90dp"
+                    tools:layout="@layout/fragment_voice_view"
+                    android:layout_marginEnd="16dp" />
 
                 <fragment
                     android:id="@+id/joystick_fragment"

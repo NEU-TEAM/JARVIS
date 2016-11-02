@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ImageButton xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/voice_button"
     android:contentDescription="@string/unknown"
-    android:visibility="visible"
-    app:srcCompat="@drawable/voice_button"
-    android:background="@drawable/background"
-    android:elevation="0dp"
     android:scaleType="fitCenter"
-    android:adjustViewBounds="false"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
-    android:layout_width="100dp"
-    android:layout_height="50dp"
-    android:contextClickable="true">
+    android:contextClickable="true"
+    android:adjustViewBounds="true"
+    android:background="@drawable/horizon_original"
+    android:layout_width="70dp"
+    android:layout_height="70dp" >
 
 </ImageButton>

@@ -10,12 +10,7 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ImageButton;
 
 import com.robotca.ControlApp.ControlApp;
@@ -24,8 +19,7 @@ import com.robotca.ControlApp.R;
 
 import org.ros.message.MessageListener;
 
-public class VoiceView extends RelativeLayout implements AnimationListener,
-        MessageListener<nav_msgs.Odometry>/*, NodeMain*/ {
+public class VoiceView extends RelativeLayout implements MessageListener<nav_msgs.Odometry>{
     /**
      * TAG Debug Log tag.
      */
@@ -36,15 +30,11 @@ public class VoiceView extends RelativeLayout implements AnimationListener,
      * mainLayout The parent layout that contains all the elements of the virtual
      * joystick.
      */
-    private RelativeLayout mainLayout;
+//    private RelativeLayout mainLayout;
 
-    private ImageButton imageButton = null;
+    public ImageButton imageButton;// = (ImageButton)findViewById(R.id.voice_button);
 
-    /**
-     * parentSize The length (width==height ideally) of a side of the parent
-     * container that holds the virtual joystick.
-     */
-    private float parentSize = Float.NaN;
+    private boolean clickState = false;
 
     /**
      * pointerId Used to keep track of the contact that initiated the interaction
@@ -84,17 +74,6 @@ public class VoiceView extends RelativeLayout implements AnimationListener,
     }
 
 
-    @Override
-    public void onAnimationEnd(Animation animation) {
-    }
-
-    @Override
-    public void onAnimationRepeat(Animation animation) {
-    }
-
-    @Override
-    public void onAnimationStart(Animation animation) {
-    }
 
     @Override
     public void onNewMessage(final nav_msgs.Odometry message) {
@@ -159,29 +138,26 @@ public class VoiceView extends RelativeLayout implements AnimationListener,
         setGravity(Gravity.CENTER);
 
         LayoutInflater.from(context).inflate(R.layout.virtual_voice_button, this, true);
-        mainLayout = (RelativeLayout) findViewById(R.id.fragment_voice_view);
+//        mainLayout = (RelativeLayout) findViewById(R.id.fragment_voice_view);
+        imageButton = (ImageButton)findViewById(R.id.voice_button);
+        imageButton.setImageResource(R.drawable.voice_off);
+        clickState = false;
     }
 
-//    void ib_init(){
-//        imageButton = new ImageButton(this);
-//        RelativeLayout.LayoutParams lp=new RelativeLayout.LayoutParams(-2, -2);
-//        lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-//        lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-//        imageButton.setLayoutParams(lp);
-//
-//        imageButton.setImageResource(this.getResources().getIdentifier("icon", "drawable", "jarvis"));
-//
-//        imageButton.setOnClickListener(new OnClickListener(){
-//            public void onClick(View v) {
-//            }
-//        });
-//    }
+    public void onContactChanged() {
+        if (clickState)
+            onContactDown();
+        else
+            onContactUp();
+        clickState = !clickState;
+    }
 
     /**
      * Update the virtual joystick to indicate a contact down has occurred.
      */
     private void onContactDown() {
         //TODO start record voice
+        imageButton.setImageResource(R.drawable.voice_on);
     }
 
     /**
@@ -190,7 +166,7 @@ public class VoiceView extends RelativeLayout implements AnimationListener,
      */
     private void onContactUp() {
         // TODO send voice
-
+        imageButton.setImageResource(R.drawable.voice_off);
         // Reset the pointer id.
         pointerId = INVALID_POINTER_ID;
     }
