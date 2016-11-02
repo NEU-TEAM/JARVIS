@@ -6,22 +6,22 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
 
         <org.ros.android.view.RosImageView
             android:id="@+id/camera_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent" />
 
         <TextView
             android:id="@+id/noCameraTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:elevation="3dp"
-            android:gravity="top|center"
+            android:gravity="center"
             android:text="@string/noCamera"
-            android:textSize="20sp"
-            android:paddingTop="80dp" />
+            android:textSize="20sp" />
 
     </RelativeLayout>
 
@@ -29,6 +29,7 @@
         android:id="@+id/laser_scan_placeholder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="10dp" />
+        android:paddingTop="2dp"
+        android:layout_weight="1" />
 
 </LinearLayout>

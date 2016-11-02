@@ -20,11 +20,10 @@
                 android:id="@+id/content_frame"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_toEndOf="@+id/hud_fragment"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/hud_fragment"
                 android:layout_alignParentStart="true"
-                android:theme="@style/JarvisTheme" />
+                android:layout_above="@+id/control_frame" />
 
             <fragment
                 android:id="@+id/hud_fragment"
@@ -34,12 +33,16 @@
                 tools:layout="@layout/fragment_hud" />
 
             <LinearLayout
+                android:id="@+id/control_frame"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/content_frame"
-                android:baselineAligned="false" >
-
+                android:baselineAligned="false"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
 
                 <fragment
                     android:id="@+id/servo_fragment"
@@ -47,9 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/fragment_servo_view"
-                    android:layout_marginBottom="80dp"
-                    android:layout_gravity="left"
-                    android:layout_marginStart="10dp" />
+                    android:layout_gravity="left" />
 
                 <fragment
                     android:id="@+id/voice_fragment"
@@ -57,18 +58,16 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/fragment_voice_view"
-                    android:layout_marginBottom="110dp"
                     android:layout_gravity="bottom"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_marginBottom="30dp" />
 
                 <fragment
                     android:id="@+id/joystick_fragment"
                     android:name="com.robotca.ControlApp.Fragments.JoystickFragment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_joystick_view"
-                    android:layout_marginEnd="10dp" />
+                    tools:layout="@layout/fragment_joystick_view" />
             </LinearLayout>
 
         </RelativeLayout>

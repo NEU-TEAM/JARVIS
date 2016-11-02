@@ -8,47 +8,51 @@
     <com.robotca.ControlApp.Views.LaserScanView
         android:id="@+id/laser_scan_renderer_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button_collection" />
 
-    <LinearLayout style="?android:attr/buttonBarStyle"
+    <LinearLayout
+        android:id="@+id/button_collection"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:paddingBottom="5dp"
-        android:layout_height="60dp">
+        android:layout_height="wrap_content">
 
-        <Button style="?android:attr/buttonBarButtonStyle"
+        <Button
             android:id="@+id/recenter_laser_scan"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/center"
             android:elevation="0dp"
-            android:textColor="@android:color/holo_blue_dark"
             android:textAlignment="center"
             android:layout_weight="1"
-            android:maxHeight="60dp" />
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textSize="14sp" />
 
-        <CheckBox style="?android:attr/buttonBarButtonStyle"
+        <CheckBox
             android:id="@+id/lock_camera_checkbox"
             android:text="@string/map_lock_camera_string"
             android:checked="true"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textColor="@android:color/holo_blue_dark"
+            android:layout_height="wrap_content"
             android:textColorLink="@android:color/holo_blue_dark"
             android:textAlignment="center"
             android:textCursorDrawable="@android:color/holo_blue_dark"
             android:layout_weight="1"
-            android:maxHeight="60dp" />
+            android:maxHeight="60dp"
+            android:gravity="center"
+            style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+            android:textSize="14sp" />
 
-        <Button style="?android:attr/buttonBarButtonStyle"
+        <Button
             android:id="@+id/clear_waypoints_button"
             android:enabled="false"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/map_clear_string"
             android:layout_weight="1"
-            android:maxHeight="60dp" />
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textSize="14sp" />
     </LinearLayout>
 
 </RelativeLayout>
