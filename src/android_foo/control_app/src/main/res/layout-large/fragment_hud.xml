@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="48dp"
-    android:background="@android:color/darker_gray"
-    android:alpha="0.65"
+    android:background="@color/background_fine"
+    android:alpha="1"
     tools:context="com.robotca.ControlApp.Fragments.HUDFragment">
 
     <ImageView

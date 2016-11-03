@@ -133,7 +133,7 @@ public class VoiceView extends RelativeLayout implements MessageListener<nav_msg
         LayoutInflater.from(context).inflate(R.layout.virtual_voice_button, this, true);
         imageButton = (ImageButton)findViewById(R.id.voice_button);
         imageButton.setImageResource(R.drawable.voice_off);
-        clickState = false;
+        clickState = true;
     }
 
     public void onContactChanged() {

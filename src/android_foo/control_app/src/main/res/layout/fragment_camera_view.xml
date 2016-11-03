@@ -16,8 +16,8 @@
         android:text="@string/noCamera"
         android:elevation="3dp"
         android:textSize="20sp"
-        android:gravity="top|center"
+        android:gravity="center"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:paddingTop="60dp" />
+        android:background="@color/background_white" />
 </RelativeLayout>

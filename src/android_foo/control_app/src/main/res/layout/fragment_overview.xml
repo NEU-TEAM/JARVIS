@@ -21,7 +21,8 @@
             android:elevation="3dp"
             android:gravity="center"
             android:text="@string/noCamera"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:background="@color/background_white" />
 
     </RelativeLayout>
 
@@ -29,7 +30,6 @@
         android:id="@+id/laser_scan_placeholder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="2dp"
         android:layout_weight="1" />
 
 </LinearLayout>

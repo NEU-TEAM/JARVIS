@@ -14,7 +14,8 @@
         <!-- The main content view -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:elevation="9dp">
             <!-- The main content view -->
             <FrameLayout
                 android:id="@+id/content_frame"
@@ -29,7 +30,7 @@
                 android:id="@+id/hud_fragment"
                 android:name="com.robotca.ControlApp.Fragments.HUDFragment"
                 android:layout_width="match_parent"
-                android:layout_height="48sp"
+                android:layout_height="wrap_content"
                 tools:layout="@layout/fragment_hud" />
 
             <LinearLayout

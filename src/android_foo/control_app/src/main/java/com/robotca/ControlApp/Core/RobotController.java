@@ -548,6 +548,7 @@ public class RobotController implements NodeMain, Savable {
         if (audioPublisher == null
                 || !userCommandTopic.equals(audioPublisher.getDefaultNodeName().toString())) {
             audioPublisher = new AudioPublisher(userCommandTopic);
+            audioPublisher.pause();
             audioPublisher.onStart(this.connectedNode);
         }
 

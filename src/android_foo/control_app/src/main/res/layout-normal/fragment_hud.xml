@@ -2,108 +2,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="horizontal"
-    android:background="@android:color/darker_gray"
-    android:alpha="0.65"
+    android:background="@color/background_fine"
+    android:alpha="1"
     tools:context="com.robotca.ControlApp.Fragments.HUDFragment"
-    android:layout_height="36dp">
+    android:layout_height="40dp">
 
     <Button
         android:id="@+id/emergency_stop_button"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:background="@color/emergency_stop_gray"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:background="@color/background_fine"
         android:text="@string/stop"
         tools:ignore="RelativeOverlap"
-        android:gravity="center" />
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true" />
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_toStartOf="@id/emergency_stop_button">
-        <RelativeLayout
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.8"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp">
+
+        <ImageView
+            android:id="@+id/hud_speedometer_icon"
+            android:src="@drawable/speedometer"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:contentDescription="@string/speedometer_icon_content_description"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true" />
 
-            <ImageView
-                android:id="@+id/hud_speedometer_icon"
-                android:src="@drawable/speedometer"
-                android:paddingTop="5sp"
-                android:paddingBottom="5sp"
+        <LinearLayout
+            android:id="@+id/hud_speed_display"
+            android:orientation="vertical"
+            android:layout_toEndOf="@id/hud_speedometer_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/hud_speed"
+
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/speedometer_icon_content_description"
-                android:layout_alignParentStart="true"
-                />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/speed_string"
+                android:layout_gravity="center|start"
+                android:gravity="center" />
 
-            <LinearLayout
-                android:id="@+id/hud_speed_display"
-                android:orientation="vertical"
-                android:layout_toEndOf="@id/hud_speedometer_icon"
+            <TextView
+                android:id="@+id/hud_turnrate"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/turnrate_string"
+                android:layout_gravity="center|start"
+                android:gravity="center" />
 
-                <TextView
-                    android:id="@+id/hud_speed"
+        </LinearLayout>
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/speed_string"
-                    android:layout_gravity="center"
-                    android:gravity="center" />
+        <ImageView
+            android:id="@+id/hud_gps_icon"
+            android:src="@drawable/gps"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_toEndOf="@id/hud_speed_display"
+            android:contentDescription="@string/gps_icon_content_description"
+            android:layout_centerInParent="true" />
 
-                <TextView
-                    android:id="@+id/hud_turnrate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/turnrate_string"
-                    android:layout_gravity="center"
-                    android:gravity="center" />
+        <LinearLayout
+            android:id="@+id/hud_gps_display"
+            android:orientation="vertical"
+            android:layout_toEndOf="@id/hud_gps_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
 
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/hud_gps_icon"
-                android:src="@drawable/gps"
-                android:paddingTop="6sp"
-                android:paddingBottom="6sp"
+            <TextView
+                android:id="@+id/hud_gps_lat"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_toEndOf="@id/hud_speed_display"
-                android:contentDescription="@string/gps_icon_content_description"/>
+                android:layout_height="wrap_content"
+                android:text="@string/latitude"
+                android:gravity="center"
+                android:layout_gravity="center|start" />
 
-            <LinearLayout
-                android:id="@+id/hud_gps_display"
-                android:orientation="vertical"
-                android:layout_toEndOf="@id/hud_gps_icon"
+            <TextView
+                android:id="@+id/hud_gps_long"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:text="@string/longitude"
+                android:gravity="center"
+                android:layout_gravity="center|start" />
 
-                <TextView
-                    android:id="@+id/hud_gps_lat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/latitude"
-                    android:gravity="center"
-                    android:layout_gravity="center" />
-
-                <TextView
-                    android:id="@+id/hud_gps_long"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/longitude"
-                    android:gravity="center"
-                    android:layout_gravity="center" />
-
-            </LinearLayout>
+        </LinearLayout>
 
 
-        </RelativeLayout>
-    </HorizontalScrollView>
+    </RelativeLayout>
 
 </RelativeLayout>
 

@@ -5,9 +5,7 @@
     android:id="@+id/fragment_voice_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="right"
-    tools:ignore="RtlSymmetry"
-    android:paddingRight="5dp">
+    android:gravity="center">
 
     <com.robotca.ControlApp.Views.VoiceView
         android:id="@+id/voice_view"

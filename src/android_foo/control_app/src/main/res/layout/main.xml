@@ -25,7 +25,7 @@
                 android:id="@+id/hud_fragment"
                 android:name="com.robotca.ControlApp.Fragments.HUDFragment"
                 android:layout_width="wrap_content"
-                android:layout_height="64sp"
+                android:layout_height="wrap_content"
                 tools:layout="@layout/fragment_hud" />
 
             <LinearLayout
