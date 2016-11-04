@@ -317,8 +317,6 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
         if (servoFragment != null)
             servoFragment.stop();
 
-        if (voiceFragment != null)
-            voiceFragment.stop();
         onTrimMemory(TRIM_MEMORY_BACKGROUND);
         super.onStop();
 
@@ -338,9 +336,6 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
 
         if (servoFragment != null)
             servoFragment.stop();
-
-        if (voiceFragment != null)
-            voiceFragment.stop();
 
         onTrimMemory(TRIM_MEMORY_BACKGROUND);
         onTrimMemory(TRIM_MEMORY_COMPLETE);
@@ -479,7 +474,6 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
         Log.d(TAG, "Stopping Robot");
         joystickFragment.stop();
         servoFragment.stop();
-        voiceFragment.stop();
         return controller.stop(cancelMotionPlan);
     }
 
@@ -620,8 +614,9 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
                     joystickFragment.hide();
                 if (servoFragment != null)
                     servoFragment.hide();
-                if (voiceFragment != null)
+                if (voiceFragment != null) {
                     voiceFragment.hide();
+                }
                 if (hudFragment != null) {
                     hudFragment.hide();
 
@@ -642,8 +637,9 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
                     joystickFragment.hide();
                 if (servoFragment != null)
                     servoFragment.hide();
-                if (voiceFragment != null)
+                if (voiceFragment != null) {
                     voiceFragment.hide();
+                }
                 if (hudFragment != null) {
                     hudFragment.hide();
 

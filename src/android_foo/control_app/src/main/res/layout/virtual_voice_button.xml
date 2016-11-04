@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ImageButton xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/voice_button"
-    android:contentDescription="@string/unknown"
+    android:contentDescription="@string/voice_icon_content_description"
     android:scaleType="fitCenter"
     android:contextClickable="true"
     android:adjustViewBounds="true"

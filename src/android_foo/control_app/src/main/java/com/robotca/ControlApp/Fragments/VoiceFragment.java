@@ -9,9 +9,10 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.ToggleButton;
 
 import com.robotca.ControlApp.Core.ControlMode;
 import com.robotca.ControlApp.R;
@@ -48,6 +49,26 @@ public class VoiceFragment extends Fragment {
                         @Override
                         public void onClick(View v) {
                             virtualVoiceView.onContactChanged();
+                        }
+                    }
+            );
+            (view.findViewById(R.id.voice_button)).setOnHoverListener(
+                    new View.OnHoverListener() {
+                        @Override
+                        public boolean onHover(View v, MotionEvent event) {
+                            int what = event.getAction();
+                            if (what == MotionEvent.ACTION_HOVER_EXIT) {
+                                virtualVoiceView.changeVoiceMode();
+                            }
+                            return false;
+                        }
+                    }
+            );
+            (view.findViewById(R.id.voice_toggle_button)).setOnClickListener(
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            virtualVoiceView.changeSpeakerMode();
                         }
                     }
             );
@@ -103,13 +124,6 @@ public class VoiceFragment extends Fragment {
         }
 
         virtualVoiceView.setControlMode(controlMode);
-    }
-
-    /**
-     * Stops the VoiceFragment.
-     */
-    public void stop() {
-        virtualVoiceView.stop();
     }
 
     /**

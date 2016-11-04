@@ -31,8 +31,7 @@ public class VoiceView extends RelativeLayout implements MessageListener<nav_msg
     public ImageButton imageButton;
 
     private boolean clickState = false;
-
-    public ConnectedNode connectedNode;
+    private boolean isOutPut = false;
 
     private int pointerId = INVALID_POINTER_ID;
 
@@ -145,6 +144,21 @@ public class VoiceView extends RelativeLayout implements MessageListener<nav_msg
     }
 
     /**
+     * Change the voice publish mode between talk or command
+     */
+    public void changeVoiceMode() {
+        publishVoice(false);
+        ((ControlApp) getContext()).getRobotController().changeVoiceMode();
+    }
+
+    /**
+     * Turn ON/OFF the speaker
+     */
+    public void changeSpeakerMode() {
+        ((ControlApp) getContext()).getRobotController().changeSpeakerMode();
+    }
+
+    /**
      * Update the virtual joystick to indicate a contact down has occurred.
      */
     private void onContactDown() {
@@ -172,8 +186,5 @@ public class VoiceView extends RelativeLayout implements MessageListener<nav_msg
     public void setControlMode(ControlMode controlMode) {
 
         this.controlMode = controlMode;
-    }
-
-    public void stop() {
     }
 }

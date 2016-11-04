@@ -28,8 +28,12 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
     public static final String JOYSTICK_TOPIC_KEY = "JOYSTICK_TOPIC_KEY";
     /** Bundle key for servo topic */
     public static final String SERVO_TOPIC_KEY = "SERVO_TOPIC_KEY";
-    /** Bundle key for servo topic */
+    /** Bundle key for user command topic */
     public static final String USER_COMMAND_TOPIC_KEY = "USER_COMMAND_TOPIC_KEY";
+    /** Bundle key for user talk topic */
+    public static final String USER_TALK_TOPIC_KEY = "USER_TALK_TOPIC_KEY";
+    /** Bundle key for voice output topic */
+    public static final String VOICE_OUTPUT_TOPIC_KEY = "VOICE_OUTPUT_TOPIC_KEY";
     /** Bundle key for laser scan topic */
     public static final String LASER_SCAN_TOPIC_KEY = "LASER_SCAN_TOPIC_KEY";
     /** Bundle key for camera topic */
@@ -62,6 +66,8 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
     private String joystickTopic;
     private String servoTopic;
     private String userCommandTopic;
+    private String userTalkTopic;
+    private String voiceOutputTopic;
     private String cameraTopic;
     private String laserTopic;
     private String navsatTopic;
@@ -85,6 +91,8 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
         joystickTopic = "/joy_teleop/cmd_vel";
         servoTopic = "/joy_teleop/servo";
         userCommandTopic = "/jarvis/user_command";
+        userTalkTopic = "/jarvis/user_talk";
+        voiceOutputTopic = "/jarvis/audio";
         cameraTopic = "/rgb/image/compressed";
         laserTopic = "/scan";
         navsatTopic = "/navsat/fix";
@@ -427,6 +435,8 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
         joystickTopic = bundle.getString(JOYSTICK_TOPIC_KEY, "/joy_teleop/cmd_vel");
         servoTopic = bundle.getString(SERVO_TOPIC_KEY, "/joy_teleop/servo");
         userCommandTopic = bundle.getString(USER_COMMAND_TOPIC_KEY, "/jarvis/user_command");
+        userTalkTopic = bundle.getString(USER_TALK_TOPIC_KEY, "/jarvis/user_talk");
+        voiceOutputTopic = bundle.getString(VOICE_OUTPUT_TOPIC_KEY, "jarvis/audio");
         cameraTopic = bundle.getString(CAMERA_TOPIC_KEY, "/rgb/image/compressed");
         laserTopic = bundle.getString(LASER_SCAN_TOPIC_KEY, "/scan");
         navsatTopic = bundle.getString(NAVSAT_TOPIC_KEY, "/navsat/fix");
@@ -442,6 +452,8 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
         joystickTopic = prefs.getString(RobotStorage.getPreferenceKey(JOYSTICK_TOPIC_KEY), "/joy_teleop/cmd_vel");
         servoTopic = prefs.getString(RobotStorage.getPreferenceKey(SERVO_TOPIC_KEY), "/joy_teleop/servo");
         userCommandTopic = prefs.getString(RobotStorage.getPreferenceKey(USER_COMMAND_TOPIC_KEY), "/jarvis/user_command");
+        userTalkTopic = prefs.getString(USER_TALK_TOPIC_KEY, "/jarvis/user_talk");
+        voiceOutputTopic = prefs.getString(VOICE_OUTPUT_TOPIC_KEY, "jarvis/audio");
         cameraTopic = prefs.getString(RobotStorage.getPreferenceKey(CAMERA_TOPIC_KEY), "/rgb/image/compressed");
         laserTopic = prefs.getString(RobotStorage.getPreferenceKey(LASER_SCAN_TOPIC_KEY), "/scan");
         navsatTopic = prefs.getString(RobotStorage.getPreferenceKey(NAVSAT_TOPIC_KEY), "/navsat/fix");
@@ -461,6 +473,8 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
         bundle.putString(JOYSTICK_TOPIC_KEY, joystickTopic);
         bundle.putString(SERVO_TOPIC_KEY, servoTopic);
         bundle.putString(USER_COMMAND_TOPIC_KEY, userCommandTopic);
+        bundle.putString(USER_TALK_TOPIC_KEY, userTalkTopic);
+        bundle.putString(VOICE_OUTPUT_TOPIC_KEY, voiceOutputTopic);
         bundle.putString(CAMERA_TOPIC_KEY, cameraTopic);
         bundle.putString(LASER_SCAN_TOPIC_KEY, laserTopic);
         bundle.putString(NAVSAT_TOPIC_KEY, navsatTopic);
@@ -476,6 +490,8 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
         prefs.putString(RobotStorage.getPreferenceKey(JOYSTICK_TOPIC_KEY), joystickTopic);
         prefs.putString(RobotStorage.getPreferenceKey(SERVO_TOPIC_KEY), servoTopic);
         prefs.putString(RobotStorage.getPreferenceKey(USER_COMMAND_TOPIC_KEY), userCommandTopic);
+        prefs.putString(USER_TALK_TOPIC_KEY, userTalkTopic);
+        prefs.putString(VOICE_OUTPUT_TOPIC_KEY, voiceOutputTopic);
         prefs.putString(RobotStorage.getPreferenceKey(CAMERA_TOPIC_KEY), cameraTopic);
         prefs.putString(RobotStorage.getPreferenceKey(LASER_SCAN_TOPIC_KEY), laserTopic);
         prefs.putString(RobotStorage.getPreferenceKey(NAVSAT_TOPIC_KEY), navsatTopic);

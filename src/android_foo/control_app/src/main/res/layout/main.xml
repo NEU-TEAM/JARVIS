@@ -47,16 +47,23 @@
                     android:layout_height="wrap_content"
                     tools:layout="@layout/fragment_servo_view" />
 
-                <fragment
-                    android:id="@+id/voice_fragment"
-                    android:name="com.robotca.ControlApp.Fragments.VoiceFragment"
+                <LinearLayout
+                    android:id="@+id/voice_collection"
+                    android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout="@layout/fragment_voice_view"
-                    android:layout_gravity="bottom"
                     android:layout_weight="1"
-                    android:layout_marginBottom="30dp"
-                    tools:layout="@layout/fragment_voice_view" />
+                    android:layout_gravity="bottom">
+
+                    <fragment
+                        android:id="@+id/voice_fragment"
+                        android:name="com.robotca.ControlApp.Fragments.VoiceFragment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout="@layout/fragment_voice_view"
+                        tools:layout="@layout/fragment_voice_view"
+                        android:layout_gravity="center" />
+                </LinearLayout>
 
                 <fragment
                     android:id="@+id/joystick_fragment"
