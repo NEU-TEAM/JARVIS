@@ -1,12 +1,17 @@
 package com.robotca.ControlApp.Fragments;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
+import android.support.v4.view.MotionEventCompat;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.robotca.ControlApp.ControlApp;
@@ -18,10 +23,12 @@ import org.ros.android.MessageCallable;
 import org.ros.android.view.RosImageView;
 import org.ros.android.view.RosTextView;
 import org.ros.message.MessageListener;
+import org.ros.node.parameter.ParameterTree;
 
 import java.util.Objects;
 
 import sensor_msgs.CompressedImage;
+import std_msgs.UInt32;
 
 /**
  * Fragment for showing the view from the Robot's camera.
@@ -31,10 +38,13 @@ import sensor_msgs.CompressedImage;
 public class CameraViewFragment extends RosFragment {
 
     private RosImageView<sensor_msgs.CompressedImage> cameraView;
+    private RosImageView<sensor_msgs.CompressedImage> cameraLabeledView;
     private TextView noCameraTextView;
     private RosTextView<std_msgs.String> statusView;
     private RosTextView<std_msgs.String> consoleView;
+    private EditText editText;
     private RobotController controller;
+    private int maxValue = 99;
 
     /**
      * Default Constructor.
@@ -53,6 +63,23 @@ public class CameraViewFragment extends RosFragment {
         cameraView.setTopicName(PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("edittext_camera_topic", getString(R.string.camera_topic)));
         cameraView.setMessageType(CompressedImage._TYPE);
         cameraView.setMessageToBitmapCallable(new BitmapFromCompressedImage());
+
+        cameraLabeledView = (RosImageView<sensor_msgs.CompressedImage>) view.findViewById(R.id.camera_fragment_camera_labeled_view);
+        cameraLabeledView.setTopicName(PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("edittext_camera_labeled_topic",
+                getString(R.string.camera_labeled_topic)));
+        cameraLabeledView.setMessageType(CompressedImage._TYPE);
+        cameraLabeledView.setMessageToBitmapCallable(new BitmapFromCompressedImage());
+
+        editText = (EditText) view.findViewById(R.id.camera_fragment_edit_text);
+
+//        cameraLabeledView.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View var1, MotionEvent var2) {
+//                if(MotionEventCompat.getActionMasked(var2) == MotionEvent.ACTION_DOWN)
+//                    cameraView.setVisibility(View.GONE);
+//                return true;
+//            }
+//        });
 
         try {
             controller = ((ControlApp) getActivity()).getRobotController();
@@ -76,9 +103,54 @@ public class CameraViewFragment extends RosFragment {
                     }
                 }
             });
+
+            controller.setLabelCameraMessageReceivedListener(new MessageListener<CompressedImage>() {
+                @Override
+                public void onNewMessage(CompressedImage compressedImage) {
+                    if (compressedImage != null) {
+                        controller.setLabelCameraMessageReceivedListener(null);
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {}
+                        });
+                    }
+                }
+            });
+
+            controller.setSelectRequestReceivedListener(new MessageListener<UInt32>() {
+                @Override
+                public void onNewMessage(final UInt32 uInt32) {
+                    if (uInt32 != null) {
+                        controller.setSelectRequestReceivedListener(null);
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                cameraView.setVisibility(View.GONE);
+                                maxValue = uInt32.getData();
+                            }
+                        });
+                    }
+                }
+            });
         }
 
-        //initialize console
+        ImageButton confirmButton = (ImageButton) view.findViewById(R.id.camera_fragment_image_button_confirm);
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onConfirm();
+            }
+        });
+
+        ImageButton cancelButton = (ImageButton) view.findViewById(R.id.camera_fragment_image_button_cancel);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onCancel();
+            }
+        });
+
+        //initialize status and console display
         statusView = (RosTextView<std_msgs.String>) view.findViewById(R.id.camera_fragment_status_text_view);
         statusView.setTopicName(PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("edittext_status_topic", getString(R.string.vision_status_topic)));
         statusView.setMessageType(std_msgs.String._TYPE);
@@ -119,6 +191,7 @@ public class CameraViewFragment extends RosFragment {
 
         if (nodeConfiguration != null) {
             nodeMainExecutor.execute(cameraView, nodeConfiguration.setNodeName("android/fragment_camera_view"));
+            nodeMainExecutor.execute(cameraLabeledView, nodeConfiguration.setNodeName("android/fragment_camera_label_view"));
             nodeMainExecutor.execute(statusView, nodeConfiguration.setNodeName("android/fragment_camera_status"));
             nodeMainExecutor.execute(consoleView, nodeConfiguration.setNodeName("android/fragment_camera_console"));
         }
@@ -129,5 +202,35 @@ public class CameraViewFragment extends RosFragment {
     @Override
     void shutdown() {
         nodeMainExecutor.shutdownNodeMain(cameraView);
+        nodeMainExecutor.shutdownNodeMain(cameraLabeledView);
+    }
+
+
+    void onConfirm() {
+        ParameterTree params = ((ControlApp) getActivity()).getRobotController().connectedNode.getParameterTree();
+        if (Objects.equals(editText.getText().toString(), "")) {
+            if (maxValue == 1) {
+                params.set("/comm/user_selected", maxValue);
+                cameraView.setVisibility(View.VISIBLE);
+            }
+            else {
+                consoleView.setText(R.string.select_not_valid);
+            }
+        }
+        else {
+            int selected_num = Integer.parseInt(editText.getText().toString());
+            if (maxValue >= selected_num && selected_num >= 0) {
+                params.set("/comm/user_selected", selected_num);
+                cameraView.setVisibility(View.VISIBLE);
+            }
+            else
+                consoleView.setText(R.string.select_not_valid);
+        }
+    }
+
+    void onCancel() {
+        ParameterTree params = ((ControlApp) getActivity()).getRobotController().connectedNode.getParameterTree();
+        params.set("/comm/user_selected", 0);
+        cameraView.setVisibility(View.VISIBLE);
     }
 }

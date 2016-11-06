@@ -20,6 +20,7 @@ import org.ros.node.NodeMain;
 import org.ros.node.NodeMainExecutor;
 import org.ros.node.topic.Publisher;
 import org.ros.node.topic.Subscriber;
+import org.ros.node.parameter.ParameterTree;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -27,6 +28,7 @@ import java.util.TimerTask;
 import java.lang.Math;
 
 import std_msgs.Int32MultiArray;
+import std_msgs.UInt32;
 import geometry_msgs.Point;
 import geometry_msgs.Pose;
 import geometry_msgs.Quaternion;
@@ -109,13 +111,19 @@ public class RobotController implements NodeMain, Savable {
     // Lock for synchronizing accessing and receiving the current Pose
     private final Object poseMutex = new Object();
 
-    // Subscriber to Pose data
+    private Subscriber<UInt32> selectRequestSubscriber;
+
     private Subscriber<CompressedImage> imageSubscriber;
-    // The most recent Pose
     private CompressedImage image;
-    // Lock for synchronizing accessing and receiving the current Pose
+
+    private Subscriber<CompressedImage> labelImageSubscriber;
+    private CompressedImage labelImage;
+
     private final Object imageMutex = new Object();
     private MessageListener<CompressedImage> imageMessageReceived;
+    private MessageListener<CompressedImage> labelImageMessageReceived;
+
+    private MessageListener<UInt32> selectRequestRecieved;
 
     // The currently running RobotPlan
     private RobotPlan motionPlan;
@@ -123,7 +131,7 @@ public class RobotController implements NodeMain, Savable {
     private int pausedPlanId;
 
     // The node connected to the Robot on which data can be sent and received
-    private ConnectedNode connectedNode;
+    public ConnectedNode connectedNode;
 
     // Listener for LaserScans
     private final ArrayList<MessageListener<LaserScan>> laserScanListeners;
@@ -192,7 +200,7 @@ public class RobotController implements NodeMain, Savable {
      * @return True on success
      */
     public boolean addNavSatFixListener(MessageListener<NavSatFix> l) {
-       return navSatListeners.add(l);
+        return navSatListeners.add(l);
     }
 
     /**
@@ -519,7 +527,7 @@ public class RobotController implements NodeMain, Savable {
 
         String voiceOutputTopic = PreferenceManager.getDefaultSharedPreferences(context)
                 .getString(context.getString(R.string.prefs_voice_output_topic_edittext_key),
-                context.getString(R.string.voice_output_topic));
+                        context.getString(R.string.voice_output_topic));
 
         String navSatTopic = PreferenceManager.getDefaultSharedPreferences(context)
                 .getString(context.getString(R.string.prefs_navsat_topic_edittext_key),
@@ -537,9 +545,17 @@ public class RobotController implements NodeMain, Savable {
                 .getString(context.getString(R.string.prefs_pose_topic_edittext_key),
                         context.getString(R.string.pose_topic));
 
+        String selectRequestTopic = PreferenceManager.getDefaultSharedPreferences(context)
+                .getString(context.getString(R.string.prefs_select_request_topic_edittext_key),
+                        context.getString(R.string.select_request_topic));
+
         String imageTopic = PreferenceManager.getDefaultSharedPreferences(context)
                 .getString(context.getString(R.string.prefs_camera_topic_edittext_key),
                         context.getString(R.string.camera_topic));
+
+        String labelImageTopic = PreferenceManager.getDefaultSharedPreferences(context)
+                .getString(context.getString(R.string.prefs_label_image_topic_edittext_key),
+                        context.getString(R.string.camera_labeled_topic));
 
         // Refresh the Servo Publisher
         if (servoPublisher == null
@@ -681,6 +697,21 @@ public class RobotController implements NodeMain, Savable {
             });
         }
 
+        if(selectRequestSubscriber == null || !selectRequestTopic.equals(selectRequestSubscriber.getTopicName().toString())){
+            if(selectRequestSubscriber != null)
+                selectRequestSubscriber.shutdown();
+
+            selectRequestSubscriber = connectedNode.newSubscriber(selectRequestTopic, UInt32._TYPE);
+            selectRequestSubscriber.addMessageListener(new MessageListener<UInt32>() {
+                @Override
+                public void onNewMessage(UInt32 uInt32) {
+                    if (selectRequestRecieved != null) {
+                        selectRequestRecieved.onNewMessage(uInt32);
+                    }
+                }
+            });
+        }
+
         if(imageSubscriber == null || !imageTopic.equals(imageSubscriber.getTopicName().toString())){
             if(imageSubscriber != null)
                 imageSubscriber.shutdown();
@@ -694,6 +725,24 @@ public class RobotController implements NodeMain, Savable {
                     synchronized (imageMutex) {
                         if (imageMessageReceived != null) {
                             imageMessageReceived.onNewMessage(image);
+                        }
+                    }
+                }
+            });
+        }
+
+        if(labelImageSubscriber == null || !labelImageTopic.equals(labelImageSubscriber.getTopicName().toString())){
+            if(labelImageSubscriber != null)
+                labelImageSubscriber.shutdown();
+
+            labelImageSubscriber = connectedNode.newSubscriber(labelImageTopic, CompressedImage._TYPE);
+
+            labelImageSubscriber.addMessageListener(new MessageListener<CompressedImage>() {
+                @Override
+                public void onNewMessage(CompressedImage image) {
+                    synchronized (imageMutex) {
+                        if (labelImageMessageReceived != null) {
+                            labelImageMessageReceived.onNewMessage(image);
                         }
                     }
                 }
@@ -966,6 +1015,14 @@ public class RobotController implements NodeMain, Savable {
 
     public void setCameraMessageReceivedListener(MessageListener<CompressedImage> cameraMessageReceived) {
         this.imageMessageReceived = cameraMessageReceived;
+    }
+
+    public void setLabelCameraMessageReceivedListener(MessageListener<CompressedImage> labelCameraMessageReceived) {
+        this.labelImageMessageReceived = labelCameraMessageReceived;
+    }
+
+    public void setSelectRequestReceivedListener(MessageListener<UInt32> selectRequestRecieved) {
+        this.selectRequestRecieved = selectRequestRecieved;
     }
 
     public void setImage(CompressedImage image) {

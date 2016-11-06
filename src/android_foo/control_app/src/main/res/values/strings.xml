@@ -10,7 +10,9 @@
     <string name="user_command_topic">/jarvis/user_command</string>
     <string name="user_talk_topic">/jarvis/user_talk</string>
     <string name="voice_output_topic">/jarvis/audio</string>
+    <string name="select_request_topic">/comm/vision/select_request</string>
     <string name="camera_topic">/rgb/image/compressed</string>
+    <string name="camera_labeled_topic">/search/labeled_image/compressed</string>
     <string name="vision_status_topic">/comm/vision/mode</string>
     <string name="vision_console_topic">/comm/vision/info</string>
     <string name="laser_scan_topic">/scan</string>
@@ -23,6 +25,7 @@
     <string name="vision_common_surf"> the target </string>
     <string name="vision_wander_mode">wandering</string>
     <string name="vision_initial">Vision system initialized</string>
+    <string name="select_not_valid">Selected number is not valid</string>
 
     <!-- Preference titles -->
     <string name="joy_pref_title">Joystick Topic</string>
@@ -51,7 +54,10 @@
     <string name="prefs_voice_output_topic_edittext_key">prefs_voice_output_topic_edittext</string>
     <string name="prefs_user_talk_topic_edittext_key">prefs_user_talk_topic_edittext</string>
     <string name="prefs_laserscan_topic_edittext_key">prefs_laserscan_topic_edittext</string>
+
+    <string name="prefs_select_request_topic_edittext_key">prefs_select_request_topic_edittext</string>
     <string name="prefs_camera_topic_edittext_key">prefs_camera_topic_edittext</string>
+    <string name="prefs_label_image_topic_edittext_key">prefs_label_image_topic_edittext</string>
     <string name="prefs_navsat_topic_edittext_key">prefs_navsat_topic_edittext</string>
     <string name="prefs_odometry_topic_edittext_key">prefs_odometry_topic_edittext</string>
     <string name="prefs_pose_topic_edittext_key">prefs_pose_topic_edittext</string>
