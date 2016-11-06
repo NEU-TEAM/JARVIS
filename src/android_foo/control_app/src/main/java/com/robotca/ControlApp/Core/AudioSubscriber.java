@@ -57,7 +57,7 @@ public class AudioSubscriber extends AbstractNodeMain {
     public void onStart(ConnectedNode connectedNode) {
         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,
                 audioManager.getStreamVolume(AudioManager.STREAM_MUSIC),
-                AudioManager.FLAG_SHOW_UI);
+                AudioManager.FLAG_PLAY_SOUND);
         audioManager.setSpeakerphoneOn(true);
 
         android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_URGENT_AUDIO);

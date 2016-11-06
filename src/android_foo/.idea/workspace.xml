@@ -58,101 +58,7 @@
     <favorites_list name="android_foo" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RobotStorage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/RobotStorage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddEditRobotDialogFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Dialogs/AddEditRobotDialogFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2232">
-              <caret line="146" column="79" selection-start-line="146" selection-start-column="50" selection-end-line="146" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_voice_view.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/fragment_voice_view.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="virtual_voice_button.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/virtual_voice_button.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-              <folding>
-                <element signature="e#177#217#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RobotInfoAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/RobotInfoAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2968">
-              <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VoiceView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Views/VoiceView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="153" column="7" selection-start-line="153" selection-start-column="7" selection-end-line="153" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AudioPublisher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/AudioPublisher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="44" column="35" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RobotController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/RobotController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="521" column="55" selection-start-line="521" selection-start-column="55" selection-end-line="521" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#16871#16933#0" expanded="true" />
-                <element signature="e#16959#17002#0" expanded="true" />
-                <element signature="e#17122#17187#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -2495,7 +2401,6 @@
       <list>
         <option value="$PROJECT_DIR$/control_app/src/main/res/values/dimen.xml" />
         <option value="$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Fragments/ServoFragment.java" />
-        <option value="$PROJECT_DIR$/control_app/src/main/res/layout/robot_info_view.xml" />
         <option value="$PROJECT_DIR$/control_app/src/main/res/layout/fragment_servo_view.xml" />
         <option value="$PROJECT_DIR$/control_app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/control_app/src/main/res/layout/nav_drawer_menu_item.xml" />
@@ -2511,7 +2416,6 @@
         <option value="$PROJECT_DIR$/control_app/build.gradle" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Fragments/CameraViewFragment.java" />
         <option value="$PROJECT_DIR$/control_app/src/main/res/layout/dialog_add_robot.xml" />
         <option value="$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Dialogs/AddEditRobotDialogFragment.java" />
         <option value="$PROJECT_DIR$/control_app/src/androidTest/java/com/robotca/ControlApp/RobotChooserTest.java" />
@@ -2523,8 +2427,6 @@
         <option value="$PROJECT_DIR$/control_app/src/main/res/layout-land/fragment_overview.xml" />
         <option value="$PROJECT_DIR$/control_app/src/main/res/layout-large/fragment_hud.xml" />
         <option value="$PROJECT_DIR$/control_app/src/main/res/layout/fragment_map.xml" />
-        <option value="$PROJECT_DIR$/control_app/src/main/res/layout/fragment_camera_view.xml" />
-        <option value="$PROJECT_DIR$/control_app/src/main/res/layout/fragment_overview.xml" />
         <option value="$PROJECT_DIR$/control_app/src/main/res/layout/fragment_laser_scan.xml" />
         <option value="$PROJECT_DIR$/control_app/src/main/res/layout-normal/fragment_hud.xml" />
         <option value="$PROJECT_DIR$/control_app/src/main/AndroidManifest.xml" />
@@ -2535,19 +2437,25 @@
         <option value="$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Views/VoiceView.java" />
         <option value="$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Fragments/VoiceFragment.java" />
         <option value="$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/RobotController.java" />
-        <option value="$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/AudioSubscriber.java" />
-        <option value="$PROJECT_DIR$/control_app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/RobotInfo.java" />
         <option value="$PROJECT_DIR$/control_app/src/main/res/layout/fragment_voice_view.xml" />
         <option value="$PROJECT_DIR$/control_app/src/main/res/layout/virtual_voice_button.xml" />
+        <option value="$PROJECT_DIR$/control_app/src/main/res/layout/robot_info_view.xml" />
+        <option value="$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/AudioSubscriber.java" />
+        <option value="$PROJECT_DIR$/control_app/src/main/res/layout/fragment_status_concel.xml" />
+        <option value="$PROJECT_DIR$/control_app/src/main/res/layout/fragment_overview.xml" />
+        <option value="$PROJECT_DIR$/control_app/src/main/res/layout/fragment_status_console.xml" />
+        <option value="$PROJECT_DIR$/control_app/src/main/res/layout/fragment_camera_view.xml" />
+        <option value="$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Fragments/CameraViewFragment.java" />
+        <option value="$PROJECT_DIR$/control_app/src/main/res/values/strings.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1855" />
-    <option name="height" value="1084" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -2764,7 +2672,6 @@
       <pane id="PackagesPane">
         <subPane />
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -2909,66 +2816,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android_foo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android_foo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="control_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android_foo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android_foo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="control_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -3007,12 +2854,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Core" />
+              <option name="myItemId" value="Fragments" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane />
       </pane>
@@ -3026,7 +2874,7 @@
     <property name="show.do.not.ask.upgrade.gradle.plugin.version" value="1.5.0" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlEditorPanel.WIDTH" value="377" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
-    <property name="UI_DESIGNER_EDITOR_MODE.NlPropertiesWindowManager-NlEditorPanel.WIDTH" value="365" />
+    <property name="UI_DESIGNER_EDITOR_MODE.NlPropertiesWindowManager-NlEditorPanel.WIDTH" value="502" />
     <property name="device.picker.selection" value="0815f825dbb62d02" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlEditorPanel.SHOW" value="true" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
@@ -3354,8 +3202,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -3373,13 +3221,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49806523" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16309012" sideWeight="0.49806523" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23106688" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43669528" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23106688" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -3389,6 +3236,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43669528" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -3404,212 +3252,19 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Fragments/CameraViewFragment.java</url>
+          <line>88</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Fragments/PreferencesFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/xml/prefs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/.idea/runConfigurations.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-23/android.jar!/android/app/Fragment.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout-land/fragment_camera_view.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Fragments/OverviewFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="46" column="47" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.osmdroid/osmdroid-android/5.2/7785db11ed3607da4e05c17fa8b8683a3e7c09b6/osmdroid-android-5.2-sources.jar!/org/osmdroid/views/MapView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="59" column="13" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/fragment_map.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout-large/fragment_hud.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Fragments/MapFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="61" column="72" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout-land/fragment_overview.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="46" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="47" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/fragment_overview.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/fragment_about.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/fragment_camera_view.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/fragment_joystick_view.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Fragments/JoystickFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout-normal/fragment_hud.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-23/android.jar!/android/view/View.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="1006" column="39" selection-start-line="1006" selection-start-column="39" selection-end-line="1006" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-23/android.jar!/java/nio/ByteOrder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="9" column="47" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#587#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-23/android.jar!/android/media/AudioFormat.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="67" column="51" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ros.rosjava_core/rosjava/0.2.1/68face01dcd34ac0dd82fc3745afd764d330b427/rosjava-0.2.1.jar!/org/ros/node/topic/Publisher.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -3653,14 +3308,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/fragment_laser_scan.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="556">
           <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control_app/src/main/res/values/styles.xml">
@@ -3672,40 +3327,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout-land/main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1134">
           <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/main.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Fragments/LaserScanFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2088#2263#0" expanded="false" />
-            <element signature="e#2262#2263#0" expanded="false" />
-            <element signature="e#2360#2662#0" expanded="false" />
-            <element signature="e#2661#2662#0" expanded="false" />
-            <element signature="e#2928#3187#0" expanded="false" />
-            <element signature="e#3186#3187#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3720,36 +3348,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/LocationProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Fragments/VoiceFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
           <caret line="70" column="65" selection-start-line="70" selection-start-column="65" selection-end-line="70" selection-end-column="65" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1334#1563#0" expanded="true" />
-            <element signature="e#1562#1563#0" expanded="true" />
-            <element signature="e#1670#2127#0" expanded="true" />
-            <element signature="e#2126#2127#0" expanded="true" />
-            <element signature="e#2241#2471#0" expanded="true" />
-            <element signature="e#2470#2471#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/ControlApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="804" column="19" selection-start-line="804" selection-start-column="19" selection-end-line="804" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1334#1563#0" expanded="false" />
+            <element signature="e#1562#1563#0" expanded="false" />
+            <element signature="e#1670#2127#0" expanded="false" />
+            <element signature="e#2126#2127#0" expanded="false" />
+            <element signature="e#2241#2471#0" expanded="false" />
+            <element signature="e#2470#2471#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3759,55 +3369,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/AudioSubscriber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-          <folding>
-            <element signature="e#898#899#0" expanded="true" />
-            <element signature="e#959#960#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="e#1047#1048#0" expanded="true" />
-            <element signature="e#1079#1080#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/AudioPublisher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
+        <state relative-caret-position="252">
           <caret line="44" column="35" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/RobotController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="521" column="55" selection-start-line="521" selection-start-column="55" selection-end-line="521" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#16871#16933#0" expanded="true" />
-            <element signature="e#16959#17002#0" expanded="true" />
-            <element signature="e#17122#17187#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Views/VoiceView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="153" column="7" selection-start-line="153" selection-start-column="7" selection-end-line="153" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/RobotInfoAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2968">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3815,7 +3380,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3823,7 +3387,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3831,64 +3394,377 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/fragment_voice_view.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/RobotInfoAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/virtual_voice_button.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/pagetwo_fragment.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/pagethree_fragment.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/pageone_fragment.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="808">
+          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-23/android.jar!/android/app/Activity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="901" column="22" selection-start-line="901" selection-start-column="22" selection-end-line="901" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/LocationProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Views/LaserScanView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="794">
+          <caret line="83" column="46" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
+          <folding>
+            <element signature="e#1347#1348#0" expanded="true" />
+            <element signature="e#1387#1388#0" expanded="true" />
+            <element signature="e#2286#2287#0" expanded="true" />
+            <element signature="e#2342#2343#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/RobotInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="121" column="11" selection-start-line="121" selection-start-column="11" selection-end-line="121" selection-end-column="11" />
-          <folding />
+        <state relative-caret-position="165">
+          <caret line="271" column="13" selection-start-line="271" selection-start-column="13" selection-end-line="271" selection-end-column="13" />
+          <folding>
+            <element signature="e#8354#8355#0" expanded="false" />
+            <element signature="e#8387#8388#0" expanded="false" />
+            <element signature="e#8545#8546#0" expanded="false" />
+            <element signature="e#8589#8590#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Dialogs/AddEditRobotDialogFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2232">
-          <caret line="146" column="79" selection-start-line="146" selection-start-column="50" selection-end-line="146" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-127">
-          <caret line="173" column="81" selection-start-line="173" selection-start-column="81" selection-end-line="173" selection-end-column="81" />
+        <state relative-caret-position="165">
+          <caret line="126" column="50" selection-start-line="126" selection-start-column="50" selection-end-line="126" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/RobotStorage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/fragment_voice_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/virtual_voice_button.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        <state relative-caret-position="165">
+          <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
           <folding>
-            <element signature="e#177#217#0" expanded="true" />
+            <element signature="e#1980#2043#0" expanded="false" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ros.rosjava_bootstrap/message_generation/0.2.1/dc3afb66cd5aa168a71bcb63ba89560b197b9300/message_generation-0.2.1.jar!/org/ros/message/MessageListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/Plans/WaypointPlan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1704">
+          <caret line="77" column="26" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/robot_info_view.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/robot_chooser.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout-normal/fragment_hud.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/nav_drawer_menu_item.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/ToolbarActionItemTarget.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/AudioSubscriber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Views/VoiceView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1640">
+          <caret line="153" column="7" selection-start-line="153" selection-start-column="7" selection-end-line="153" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/SplashActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Core/RobotController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="612" column="56" selection-start-line="612" selection-start-column="56" selection-end-line="612" selection-end-column="56" />
+          <folding>
+            <element signature="e#17205#17251#0" expanded="false" />
+            <element signature="e#22189#22390#0" expanded="false" />
+            <element signature="e#22389#22390#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/RobotChooser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/ControlApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13804">
+          <caret line="54" column="41" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Fragments/LaserScanFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="75" column="63" selection-start-line="75" selection-start-column="62" selection-end-line="75" selection-end-column="63" />
+          <folding>
+            <element signature="e#2088#2263#0" expanded="false" />
+            <element signature="e#2262#2263#0" expanded="false" />
+            <element signature="e#2360#2662#0" expanded="false" />
+            <element signature="e#2661#2662#0" expanded="false" />
+            <element signature="e#2928#3187#0" expanded="false" />
+            <element signature="e#3186#3187#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/fragment_status_console.xml">
       <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-23/android.jar!/android/preference/PreferenceManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-23/android.jar!/android/app/Fragment.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="97" column="26" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
+          <folding>
+            <element signature="e#2729#2730#0" expanded="true" />
+            <element signature="e#2780#2781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/build/generated/source/r/debug/com/robotca/ControlApp/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="2535" column="32" selection-start-line="2535" selection-start-column="32" selection-end-line="2535" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Fragments/RosFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/fragment_overview.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/java/com/robotca/ControlApp/Fragments/CameraViewFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="102" column="154" selection-start-line="102" selection-start-column="154" selection-end-line="102" selection-end-column="154" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1826#1858#0" expanded="true" />
+            <element signature="e#2294#2904#0" expanded="true" />
+            <element signature="e#2615#2848#0" expanded="true" />
+            <element signature="e#2847#2848#0" expanded="true" />
+            <element signature="e#2903#2904#0" expanded="true" />
+            <element signature="e#3185#3224#0" expanded="true" />
+            <element signature="e#3332#4169#0" expanded="true" />
+            <element signature="e#3572#3610#0" expanded="true" />
+            <element signature="e#3619#3657#0" expanded="true" />
+            <element signature="e#3736#3774#0" expanded="true" />
+            <element signature="e#3803#3841#0" expanded="true" />
+            <element signature="e#3850#3888#0" expanded="true" />
+            <element signature="e#3955#3993#0" expanded="true" />
+            <element signature="e#4028#4066#0" expanded="true" />
+            <element signature="e#4168#4169#0" expanded="true" />
+            <element signature="e#4565#4992#0" expanded="true" />
+            <element signature="e#4805#4839#0" expanded="true" />
+            <element signature="e#4991#4992#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_app/src/main/res/layout/fragment_camera_view.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+          <folding>
+            <element signature="e#1454#1472#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

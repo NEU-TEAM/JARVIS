@@ -11,10 +11,18 @@
     <string name="user_talk_topic">/jarvis/user_talk</string>
     <string name="voice_output_topic">/jarvis/audio</string>
     <string name="camera_topic">/rgb/image/compressed</string>
+    <string name="vision_status_topic">/comm/vision/mode</string>
+    <string name="vision_console_topic">/comm/vision/info</string>
     <string name="laser_scan_topic">/scan</string>
     <string name="odometry_topic">/odometry/filtered</string>
     <string name="pose_topic">/pose</string>
     <string name="navsat_topic">/navsat/fix</string>
+
+    <!-- Robot vision system mode -->
+    <string name="vision_common_pref">The vision system is </string>
+    <string name="vision_common_surf"> the target </string>
+    <string name="vision_wander_mode">wandering</string>
+    <string name="vision_initial">Vision system initialized</string>
 
     <!-- Preference titles -->
     <string name="joy_pref_title">Joystick Topic</string>
