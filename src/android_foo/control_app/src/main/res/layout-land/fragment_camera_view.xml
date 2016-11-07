@@ -1,22 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
-    <org.ros.android.view.RosImageView
-        android:id="@+id/camera_fragment_camera_view"
+    <LinearLayout
+        android:id="@+id/camera_fragment_hl_view"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_alignParentTop="true">
 
+        <org.ros.android.view.RosTextView
+            android:id="@+id/camera_fragment_status_text_view"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="4dp"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/noCameraTextView"
-        android:text="@string/noCamera"
-        android:elevation="6dp"
-        android:textSize="20sp"
-        android:gravity="top|center"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:paddingTop="60dp" />
+        <org.ros.android.view.RosTextView
+            android:id="@+id/camera_fragment_console_text_view"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="4dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/camera_fragment_main_view"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/camera_fragment_hl_view"
+        android:layout_above="@+id/camera_fragment_button_view">
+
+        <org.ros.android.view.RosTextView
+            android:id="@+id/noCameraTextView"
+            android:text="@string/noCamera"
+            android:elevation="3dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_white" />
+
+        <org.ros.android.view.RosImageView
+            android:id="@+id/camera_fragment_camera_view"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+
+        <org.ros.android.view.RosImageView
+            android:id="@+id/camera_fragment_camera_labeled_view"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/camera_fragment_button_view"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:layout_centerHorizontal="true">
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:id="@+id/camera_fragment_edit_text"
+            android:maxLines="1"
+            tools:ignore="LabelFor"
+            android:layout_width="100dp" />
+
+        <ImageButton
+            android:id="@+id/camera_fragment_image_button_confirm"
+            app:srcCompat="@drawable/ok_128px"
+            android:layout_height="40dp"
+            android:layout_width="120dp"
+            tools:ignore="ContentDescription"
+            android:scaleType="fitCenter"
+            style="@android:style/Widget.Holo.Light.ImageButton"
+            android:backgroundTint="@color/emergency_stop_green"
+            android:elevation="3dp" />
+
+        <ImageButton
+            android:id="@+id/camera_fragment_image_button_cancel"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/close"
+            tools:ignore="ContentDescription"
+            android:scaleType="fitCenter"
+            style="@android:style/Widget.Holo.Light.ImageButton"
+            android:layout_width="120dp"
+            android:backgroundTint="@color/emergency_stop_red"
+            android:elevation="3dp" />
+
+        <ToggleButton
+            android:text="ToggleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/camera_fragment_toggle_button"
+            android:layout_weight="1"
+            tools:ignore="HardcodedText"
+            android:textOff="@string/live_image"
+            android:textOn="@string/labeled_image" />
+
+    </LinearLayout>
 
 </RelativeLayout>

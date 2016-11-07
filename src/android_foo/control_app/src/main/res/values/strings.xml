@@ -24,8 +24,9 @@
     <string name="vision_common_pref">The vision system is </string>
     <string name="vision_common_surf"> the target </string>
     <string name="vision_wander_mode">wandering</string>
-    <string name="vision_initial">Vision system initialized</string>
-    <string name="select_not_valid">Selected number is not valid</string>
+    <string name="vision_initial">Vision system initialized.</string>
+    <string name="vision_choose">"Please select the number of the target. If no target, press red button."</string>
+    <string name="select_not_valid">Selected number is not valid.</string>
 
     <!-- Preference titles -->
     <string name="joy_pref_title">Joystick Topic</string>
@@ -142,6 +143,8 @@
     <string name="voice_toggle_button">Switch Voice Output</string>
     <string name="voice_feedback_on">ON</string>
     <string name="voice_feedback_off">OFF</string>
+    <string name="labeled_image">Label</string>
+    <string name="live_image">Live</string>
 
     <!-- Drawer item titles -->
     <string-array name="feature_titles">

@@ -38,18 +38,18 @@ public class AudioPublisher extends AbstractNodeMain {
     private String topicName;
     private boolean userPaused = false;
 
-    public AudioPublisher(String topicName) {
+    AudioPublisher(String topicName) {
         this.topicName = topicName;
     }
 
     private AudioRecord audioRecord;
     private static final int SAMPLE_RATE = 8000;
 
-    public void pause() {
+    void pause() {
         userPaused = true;
     }
 
-    public void play() {
+    void play() {
         userPaused = false;
     }
 
@@ -60,12 +60,10 @@ public class AudioPublisher extends AbstractNodeMain {
 
     @Override
     public void onShutdown(Node node) {
-        if (audioRecord != null) {
-            audioRecord.stop();
-        }
+        if (null != audioRecord) audioRecord.stop();
     }
 
-    public void onShutdown() {
+    void onShutdown() {
         if (audioRecord != null) {
             audioRecord.stop();
         }

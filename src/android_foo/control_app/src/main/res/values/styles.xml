@@ -44,7 +44,7 @@
     <style name="JarvisTheme" parent="android:Theme.Holo.Light">
         <item name="android:colorForeground" tools:ignore="PrivateResource">@color/foreground_material_light</item>
         <item name="android:windowBackground">@color/cardview_light_background</item>
-        <item name="android:navigationBarColor">@android:color/holo_blue_dark</item>
+        <item name="android:navigationBarColor">@color/accent_material_light_2</item>
         <item name="android:statusBarColor">@color/accent_material_light_2</item>
         <item name="android:toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
         <item name="android:colorPrimaryDark">@color/accent_material_light_2</item>

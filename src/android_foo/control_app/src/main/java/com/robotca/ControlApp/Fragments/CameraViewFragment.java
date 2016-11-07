@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.robotca.ControlApp.ControlApp;
 import com.robotca.ControlApp.Core.RobotController;
@@ -43,6 +44,7 @@ public class CameraViewFragment extends RosFragment {
     private RosTextView<std_msgs.String> statusView;
     private RosTextView<std_msgs.String> consoleView;
     private EditText editText;
+    private ToggleButton toggleButton;
     private RobotController controller;
     private int maxValue = 99;
 
@@ -125,7 +127,6 @@ public class CameraViewFragment extends RosFragment {
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                cameraView.setVisibility(View.GONE);
                                 maxValue = uInt32.getData();
                             }
                         });
@@ -147,6 +148,21 @@ public class CameraViewFragment extends RosFragment {
             @Override
             public void onClick(View v) {
                 onCancel();
+            }
+        });
+
+        toggleButton = (ToggleButton) view.findViewById(R.id.camera_fragment_toggle_button);
+        toggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cameraLabeledView.isShown()) {
+                    cameraLabeledView.setVisibility(View.GONE);
+                    cameraView.setVisibility(View.VISIBLE);
+                }
+                else {
+                    cameraView.setVisibility(View.GONE);
+                    cameraLabeledView.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -182,7 +198,15 @@ public class CameraViewFragment extends RosFragment {
                     s = getString(R.string.vision_initial);
                 }
                 else {
-                    s = message.getData();
+                    if (Objects.equals(message.getData(), "CHOOSE")) {
+                        s = getString(R.string.vision_choose);
+                        if (!cameraLabeledView.isShown()) {
+                            toggleButton.callOnClick();
+                        }
+                    }
+                    else {
+                        s = message.getData();
+                    }
                 }
                 return s;
             }
@@ -211,7 +235,6 @@ public class CameraViewFragment extends RosFragment {
         if (Objects.equals(editText.getText().toString(), "")) {
             if (maxValue == 1) {
                 params.set("/comm/user_selected", maxValue);
-                cameraView.setVisibility(View.VISIBLE);
             }
             else {
                 consoleView.setText(R.string.select_not_valid);
@@ -221,7 +244,6 @@ public class CameraViewFragment extends RosFragment {
             int selected_num = Integer.parseInt(editText.getText().toString());
             if (maxValue >= selected_num && selected_num >= 0) {
                 params.set("/comm/user_selected", selected_num);
-                cameraView.setVisibility(View.VISIBLE);
             }
             else
                 consoleView.setText(R.string.select_not_valid);
@@ -231,6 +253,5 @@ public class CameraViewFragment extends RosFragment {
     void onCancel() {
         ParameterTree params = ((ControlApp) getActivity()).getRobotController().connectedNode.getParameterTree();
         params.set("/comm/user_selected", 0);
-        cameraView.setVisibility(View.VISIBLE);
     }
 }
