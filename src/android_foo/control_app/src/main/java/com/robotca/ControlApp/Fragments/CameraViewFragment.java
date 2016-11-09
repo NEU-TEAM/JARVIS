@@ -2,6 +2,7 @@ package com.robotca.ControlApp.Fragments;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
@@ -10,10 +11,17 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Point;
+import android.graphics.Rect;
 
 import com.robotca.ControlApp.ControlApp;
 import com.robotca.ControlApp.Core.RobotController;
@@ -48,10 +56,21 @@ public class CameraViewFragment extends RosFragment {
     private RobotController controller;
     private int maxValue = 99;
 
+    private float x_start, y_start, x_end, y_end;
+    private Rect rectangle;
+    private Paint paint;
+
     /**
      * Default Constructor.
      */
-    public CameraViewFragment(){}
+    public CameraViewFragment(){
+        rectangle = new Rect();
+        paint = new Paint();
+        paint.setColor(Color.GRAY);
+        paint.setStrokeWidth(5);
+        paint.setStyle(Paint.Style.STROKE);
+    }
+
 
     @Nullable
     @Override
@@ -65,6 +84,43 @@ public class CameraViewFragment extends RosFragment {
         cameraView.setTopicName(PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("edittext_camera_topic", getString(R.string.camera_topic)));
         cameraView.setMessageType(CompressedImage._TYPE);
         cameraView.setMessageToBitmapCallable(new BitmapFromCompressedImage());
+
+        cameraView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        x_start = event.getX();
+                        y_start = event.getY();
+                        v.setPressed(true);
+                        break;
+
+                    case MotionEvent.ACTION_MOVE:
+                        float x = event.getX();
+                        float y = event.getY();
+                        boolean isInside = (x > 0 && x < v.getWidth() && y > 0 && y < v.getHeight());
+                        if (v.isPressed() != isInside) {
+                            v.setPressed(isInside);
+                        }
+                        break;
+                    case MotionEvent.ACTION_CANCEL:
+                        v.setPressed(false);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        if (v.isPressed()) {
+//                            v.performClick();
+                            v.setPressed(false);
+                            x_end = event.getX();
+                            y_end = event.getY();
+                            publishROI();
+                        }
+                        break;
+                }
+                return true;
+            }
+        });
+
+
 
         cameraLabeledView = (RosImageView<sensor_msgs.CompressedImage>) view.findViewById(R.id.camera_fragment_camera_labeled_view);
         cameraLabeledView.setTopicName(PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("edittext_camera_labeled_topic",
@@ -113,7 +169,9 @@ public class CameraViewFragment extends RosFragment {
                         controller.setLabelCameraMessageReceivedListener(null);
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
-                            public void run() {}
+                            public void run() {
+                                cameraView.setVisibility(View.GONE);
+                            }
                         });
                     }
                 }
@@ -136,6 +194,7 @@ public class CameraViewFragment extends RosFragment {
         }
 
         ImageButton confirmButton = (ImageButton) view.findViewById(R.id.camera_fragment_image_button_confirm);
+        confirmButton.setImageResource(R.drawable.check);
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -144,10 +203,27 @@ public class CameraViewFragment extends RosFragment {
         });
 
         ImageButton cancelButton = (ImageButton) view.findViewById(R.id.camera_fragment_image_button_cancel);
+        cancelButton.setImageResource(R.drawable.cross);
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onCancel();
+            }
+        });
+
+        Button button = (Button) view.findViewById(R.id.camera_fragment_clear_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClear();
+            }
+        });
+
+        Button sendButton = (Button) view.findViewById(R.id.camera_fragment_send_target_button);
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onSend();
             }
         });
 
@@ -232,26 +308,68 @@ public class CameraViewFragment extends RosFragment {
 
     void onConfirm() {
         ParameterTree params = ((ControlApp) getActivity()).getRobotController().connectedNode.getParameterTree();
+        if (maxValue == 1) {
+            params.set(getString(R.string.param_user_selected), maxValue);
+            return;
+        }
         if (Objects.equals(editText.getText().toString(), "")) {
-            if (maxValue == 1) {
-                params.set("/comm/user_selected", maxValue);
-            }
-            else {
-                consoleView.setText(R.string.select_not_valid);
-            }
+            consoleView.setText(R.string.select_not_valid);
         }
         else {
             int selected_num = Integer.parseInt(editText.getText().toString());
             if (maxValue >= selected_num && selected_num >= 0) {
-                params.set("/comm/user_selected", selected_num);
+                params.set(getString(R.string.param_user_selected), selected_num);
             }
             else
                 consoleView.setText(R.string.select_not_valid);
         }
     }
 
+    /**
+     * Cancel current search and continue
+     */
     void onCancel() {
         ParameterTree params = ((ControlApp) getActivity()).getRobotController().connectedNode.getParameterTree();
-        params.set("/comm/user_selected", 0);
+        params.set(getString(R.string.param_user_selected), 0);
+    }
+
+    void onSend() {
+        ParameterTree params = ((ControlApp) getActivity()).getRobotController().connectedNode.getParameterTree();
+        if (Objects.equals(editText.getText().toString(), "")) {
+            consoleView.setText(R.string.need_set_target_label);
+        }
+        else {
+            consoleView.setText(R.string.target_confirmed);
+            params.set(getString(R.string.param_target_label), editText.getText().toString());
+            params.set(getString(R.string.param_target_is_set), true);
+        }
+        editText.setText("");
+    }
+
+    /**
+     * Clear current target
+     */
+    void onClear() {
+        ParameterTree params = ((ControlApp) getActivity()).getRobotController().connectedNode.getParameterTree();
+        params.set(getString(R.string.param_target_label), "");
+        params.set(getString(R.string.param_target_is_set), false);
+        consoleView.setText(R.string.target_canceled);
+        editText.setText("");
+    }
+
+    void publishROI() {
+        ParameterTree params = ((ControlApp) getActivity()).getRobotController().connectedNode.getParameterTree();
+        if (x_start < x_end && y_start < y_end) {
+            if (cameraView.getWidth() < 2 * cameraView.getHeight()) {
+                float x_s = x_start / cameraView.getWidth() * 640;
+                float x_e = x_end / cameraView.getWidth() * 640;
+                float y_s = (float)(y_start - (cameraView.getHeight() - 0.75 * cameraView.getWidth()) / 2 ) / cameraView.getWidth() * 640;
+                float y_e = (float)(y_end - (cameraView.getHeight() - 0.75 * cameraView.getWidth()) / 2 ) / cameraView.getWidth() * 640;
+
+                params.set(getString(R.string.param_target_label), "user selected object");
+                params.set(getString(R.string.param_target_is_set), true);
+                controller.publishROI(x_s, y_s, x_e, y_e);
+            }
+        }
     }
 }

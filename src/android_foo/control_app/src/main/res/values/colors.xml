@@ -7,15 +7,15 @@
     <color name="emergency_stop_gray">#aaaaaa</color>
     <color name="accent_material_light_1">#0b30ac</color>
     <color name="accent_material_light_2">#1820b2</color>
-    <color name="primary_text_material_light">#283593</color>
+    <color name="primary_text_material_light">#212121</color>
     <color name="primary_text_material_dark">#ffffff</color>
     <color name="nbc">#313fd6</color>
-    <color name="primary_text_holo_light">#06067a</color>
+    <color name="primary_text_holo_light">#ffffff</color>
     <color name="secondary_text_holo_light">#565454</color>
     <color name="primary_text_holo_dark">#f3f3f3</color>
     <color name="secondary_text_holo_dark">#bebebe</color>
-    <color name="background_fine">#72555b61</color>
-    <color name="background_dark">#909dba</color>
+    <color name="background_fine">#82475663</color>
+    <color name="background_dark">#ac9fa1d2</color>
     <color name="background_white">#ffffff</color>
 
 </resources>

@@ -64,4 +64,11 @@
         <item name="android:statusBarColor">@color/accent_material_light_2</item>
     </style>
 
+    <style name="Theme.JarvisTheme.Light" parent="android:Theme.Material.Light" >
+        <item name="android:colorPrimary">@color/primary_material_light</item>
+        <item name="android:colorPrimaryDark">@color/primary_dark_material_light</item>
+        <item name="android:colorAccent">@color/accent_material_light</item>
+        <item name="android:textColorPrimary">@color/primary_text_material_light</item>
+    </style>
+
 </resources>

@@ -21,6 +21,7 @@ import org.ros.node.NodeMainExecutor;
 import org.ros.node.topic.Publisher;
 import org.ros.node.topic.Subscriber;
 import org.ros.node.parameter.ParameterTree;
+import org.ros.time.TimeProvider;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -28,6 +29,7 @@ import java.util.TimerTask;
 import java.lang.Math;
 
 import std_msgs.Int32MultiArray;
+import std_msgs.Float32MultiArray;
 import std_msgs.UInt32;
 import geometry_msgs.Point;
 import geometry_msgs.Pose;
@@ -59,6 +61,9 @@ public class RobotController implements NodeMain, Savable {
 
     // Timer for periodically publishing servo commands
     private Timer servoPublisherTimer;
+
+    private Publisher<std_msgs.Float32MultiArray> roiPublisher;
+    private Float32MultiArray currentRoi;
 
     // Indicates when a velocity command should be published
     private boolean publishVelocity;
@@ -557,6 +562,19 @@ public class RobotController implements NodeMain, Savable {
                 .getString(context.getString(R.string.prefs_label_image_topic_edittext_key),
                         context.getString(R.string.camera_labeled_topic));
 
+        String roiTopic = PreferenceManager.getDefaultSharedPreferences(context).getString(
+                context.getString(R.string.prefs_roi_topic_edittext_key),
+                context.getString(R.string.roi_topic));
+
+        //Refresh the roi publisher
+        if (roiPublisher == null || !roiTopic.equals(roiPublisher.getTopicName().toString())) {
+            if (roiPublisher != null) {
+                roiPublisher.shutdown();
+            }
+            roiPublisher = connectedNode.newPublisher(roiTopic, Float32MultiArray._TYPE);
+            currentRoi = roiPublisher.newMessage();
+        }
+
         // Refresh the Servo Publisher
         if (servoPublisher == null
                 || !servoTopic.equals(servoPublisher.getTopicName().toString())) {
@@ -1035,5 +1053,16 @@ public class RobotController implements NodeMain, Savable {
         synchronized (imageMutex) {
             return this.image;
         }
+    }
+
+    public void publishROI(float x_s, float y_s, float x_e, float y_e) {
+        float[] array;
+        array = new float[4];
+        array[0] = x_s;
+        array[1] = y_s;
+        array[2] = x_e;
+        array[3] = y_e;
+        currentRoi.setData(array);
+        roiPublisher.publish(currentRoi);
     }
 }
