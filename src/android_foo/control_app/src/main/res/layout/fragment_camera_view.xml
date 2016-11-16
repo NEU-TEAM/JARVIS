@@ -75,7 +75,9 @@
             android:maxLines="1"
             tools:ignore="LabelFor"
             android:layout_width="match_parent"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            style="@android:style/Widget.Material.EditText"
+            android:textColor="@android:color/black" />
 
     </LinearLayout>
 

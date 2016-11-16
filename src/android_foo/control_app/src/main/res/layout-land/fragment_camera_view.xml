@@ -76,7 +76,8 @@
             android:id="@+id/camera_fragment_edit_text"
             android:maxLines="1"
             tools:ignore="LabelFor"
-            android:layout_width="100dp" />
+            android:layout_width="100dp"
+            android:textColor="@android:color/black" />
 
         <ImageButton
             android:id="@+id/camera_fragment_image_button_confirm"

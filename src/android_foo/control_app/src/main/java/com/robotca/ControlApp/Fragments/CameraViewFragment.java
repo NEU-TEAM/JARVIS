@@ -316,7 +316,13 @@ public class CameraViewFragment extends RosFragment {
             consoleView.setText(R.string.select_not_valid);
         }
         else {
-            int selected_num = Integer.parseInt(editText.getText().toString());
+            int selected_num = -1;
+            try {
+                selected_num = Integer.parseInt(editText.getText().toString());
+            }
+            catch (Exception ex) {
+                consoleView.setText(R.string.select_not_valid);
+            }
             if (maxValue >= selected_num && selected_num >= 0) {
                 params.set(getString(R.string.param_user_selected), selected_num);
             }
