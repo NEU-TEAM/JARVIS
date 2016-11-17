@@ -185,7 +185,7 @@
     <string name="master_uri" translatable="false">Master URI:</string>
     <string name="joystick_topic_prompt">Joystick Topic:</string>
     <string name="servo_topic_prompt">Servo Topic:</string>
-    <string name="user_command_topic_prompt">User Command Topic:</string>
+    <string name="user_command_topic_prompt">User Command:</string>
     <string name="user_talk_topic_prompt">User Talk Topic:</string>
     <string name="voice_output_topic_prompt">Voice Output Topic:</string>
     <string name="camera_topic_prompt">Camera Topic:</string>

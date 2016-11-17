@@ -24,8 +24,12 @@ University of South Carolina
 This software have been modified to control NEU household robot.
 A servo control function was added to help control 2DOF servo driven platform.
 Auido input function will be added to let user control the robot by voice command.
+If no camera image is recieved, make sure ROS_HOSTNAME is not set.
+
+2016/11/16
+Now in 'Camera' mode user can send target for object recognition and tracking by input the label of the target. One can also tracking the target by drawing rectangle upon the image.
 
 Author:
 Zhipeng Dong
-Ph.D candidate
+Ph.D student
 https://github.com/DrawZeroPoint
