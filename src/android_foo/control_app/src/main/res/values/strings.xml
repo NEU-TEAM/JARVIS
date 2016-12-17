@@ -38,7 +38,7 @@
     <string name="vision_choose">Enter target number. If no target, press the red button.</string>
 
     <!-- Console output-->
-    <string name="select_not_valid">Can't select target number.</string>
+    <string name="select_not_valid">Can not select target number.</string>
     <string name="send_not_valid">Cancel current target first to send new target.</string>
     <string name="need_set_target_label">Target label is needed.</string>
 
