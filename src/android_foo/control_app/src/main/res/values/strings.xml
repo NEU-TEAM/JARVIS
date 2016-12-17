@@ -5,7 +5,7 @@
     <string name="app_name" translatable="false">JARVIS</string>
 
     <!-- Topic values -->
-    <string name="joy_topic">/joy_teleop/cmd_vel</string>
+    <string name="joy_topic">/cmd_vel</string>
     <string name="servo_topic">/joy_teleop/servo</string>
     <string name="user_command_topic">/jarvis/user_command</string>
     <string name="user_talk_topic">/jarvis/user_talk</string>
@@ -25,8 +25,9 @@
     <string name="param_target_is_set">/comm/param/control/target/is_set</string>
     <string name="param_target_label">/comm/param/control/target/label</string>
     <string name="param_user_selected">/comm/param/control/target/selected</string>
-    <string name="need_set_target_label">Target label is needed.</string>
-    <string name="target_confirmed">Target confirmed.</string>
+    <string name="param_search_select_lock">/vision/select/param/lock</string>
+    <string name="param_track_send_lock">/vision/track/param/lock</string>
+    <string name="target_confirmed">Target has been set.</string>
     <string name="target_canceled">Target canceled.</string>
 
     <!-- Robot vision system mode -->
@@ -34,8 +35,12 @@
     <string name="vision_common_surf"> the target </string>
     <string name="vision_wander_mode">wandering</string>
     <string name="vision_initial">Vision system initialized.</string>
-    <string name="vision_choose">Please select the number of the target. If no target, press the red button.</string>
-    <string name="select_not_valid">Selected number is not valid.</string>
+    <string name="vision_choose">Enter target number. If no target, press the red button.</string>
+
+    <!-- Console output-->
+    <string name="select_not_valid">Can't select target number.</string>
+    <string name="send_not_valid">Cancel current target first to send new target.</string>
+    <string name="need_set_target_label">Target label is needed.</string>
 
     <!-- Preference titles -->
     <string name="joy_pref_title">Joystick Topic</string>

@@ -227,6 +227,7 @@ public class CameraViewFragment extends RosFragment {
             }
         });
 
+        // switch between camera live view and search result view
         toggleButton = (ToggleButton) view.findViewById(R.id.camera_fragment_toggle_button);
         toggleButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -277,7 +278,7 @@ public class CameraViewFragment extends RosFragment {
                     if (Objects.equals(message.getData(), "CHOOSE")) {
                         s = getString(R.string.vision_choose);
                         if (!cameraLabeledView.isShown()) {
-                            toggleButton.callOnClick();
+                            toggleButton.callOnClick(); // show labeled image(search result)
                         }
                     }
                     else {
@@ -306,8 +307,17 @@ public class CameraViewFragment extends RosFragment {
     }
 
 
+    /**
+     * Confirm current search result by selecting the target's number
+     */
     void onConfirm() {
         ParameterTree params = ((ControlApp) getActivity()).getRobotController().connectedNode.getParameterTree();
+        if (params.has(getString(R.string.param_search_select_lock))){
+            Boolean is_lock = params.getBoolean(getString(R.string.param_search_select_lock));
+            if (is_lock){
+                return;
+            }
+        }
         if (maxValue == 1) {
             params.set(getString(R.string.param_user_selected), maxValue);
             return;
@@ -332,15 +342,27 @@ public class CameraViewFragment extends RosFragment {
     }
 
     /**
-     * Cancel current search and continue
+     * Deny current search result and continue
      */
     void onCancel() {
         ParameterTree params = ((ControlApp) getActivity()).getRobotController().connectedNode.getParameterTree();
-        params.set(getString(R.string.param_user_selected), 0);
+        if (params.has(getString(R.string.param_search_select_lock))){
+            Boolean is_lock = params.getBoolean(getString(R.string.param_search_select_lock));
+            if (!is_lock){
+                params.set(getString(R.string.param_user_selected), 0);
+            }
+        }
     }
 
     void onSend() {
         ParameterTree params = ((ControlApp) getActivity()).getRobotController().connectedNode.getParameterTree();
+        if (params.has(getString(R.string.param_track_send_lock))){
+            Boolean is_lock = params.getBoolean(getString(R.string.param_track_send_lock));
+            if (is_lock){
+                consoleView.setText(R.string.send_not_valid);
+                return;
+            }
+        }
         if (Objects.equals(editText.getText().toString(), "")) {
             consoleView.setText(R.string.need_set_target_label);
         }
