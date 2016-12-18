@@ -366,6 +366,10 @@ public class CameraViewFragment extends RosFragment {
         if (Objects.equals(editText.getText().toString(), "")) {
             consoleView.setText(R.string.need_set_target_label);
         }
+        else if (Objects.equals(editText.getText().toString(), "face")) {
+            consoleView.setText(R.string.recognize_face);
+            params.set(getString(R.string.need_recognize_face), true);
+        }
         else {
             consoleView.setText(R.string.target_confirmed);
             params.set(getString(R.string.param_target_label), editText.getText().toString());
@@ -383,7 +387,8 @@ public class CameraViewFragment extends RosFragment {
         params.set(getString(R.string.param_target_is_set), false);
         params.set(getString(R.string.param_action_target_label), "");
         params.set(getString(R.string.param_action_target_is_set), false);
-        params.set(getString(R.string.param_user_selected), 0);
+        params.set(getString(R.string.param_user_selected), -1);
+        params.set(getString(R.string.need_recognize_face), false);
         consoleView.setText(R.string.target_canceled);
         editText.setText("");
     }

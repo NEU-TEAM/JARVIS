@@ -29,8 +29,7 @@
     <string name="param_user_selected">/comm/param/control/target/selected</string>
     <string name="param_search_select_lock">/vision/select/param/lock</string>
     <string name="param_track_send_lock">/vision/track/param/lock</string>
-    <string name="target_confirmed">Target has been set.</string>
-    <string name="target_canceled">Target canceled.</string>
+    <string name="need_recognize_face">/vision/face/need_recognize</string>
 
     <!-- Robot vision system mode -->
     <string name="vision_common_pref">The vision system is </string>
@@ -40,9 +39,12 @@
     <string name="vision_choose">Enter target number. If no target, press the red button.</string>
 
     <!-- Console output-->
+    <string name="target_confirmed">Target has been set.</string>
+    <string name="target_canceled">Target cancelled.</string>
     <string name="select_not_valid">Can not select target number.</string>
     <string name="send_not_valid">Cancel current target first to send new target.</string>
     <string name="need_set_target_label">Target label is needed.</string>
+    <string name="recognize_face">Recognize faces in current scene.</string>
 
     <!-- Preference titles -->
     <string name="joy_pref_title">Joystick Topic</string>
