@@ -381,6 +381,9 @@ public class CameraViewFragment extends RosFragment {
         ParameterTree params = ((ControlApp) getActivity()).getRobotController().connectedNode.getParameterTree();
         params.set(getString(R.string.param_target_label), "");
         params.set(getString(R.string.param_target_is_set), false);
+        params.set(getString(R.string.param_action_target_label), "");
+        params.set(getString(R.string.param_action_target_is_set), false);
+        params.set(getString(R.string.param_user_selected), 0);
         consoleView.setText(R.string.target_canceled);
         editText.setText("");
     }

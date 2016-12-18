@@ -88,7 +88,7 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
         //id = UUID.randomUUID();
         name = "MARK" + robotCount++;
         masterUriString = "http://192.168.1.101:11311";
-        joystickTopic = "/joy_teleop/cmd_vel";
+        joystickTopic = "/cmd_vel";
         servoTopic = "/joy_teleop/servo";
         userCommandTopic = "/jarvis/user_command";
         userTalkTopic = "/jarvis/user_talk";
@@ -432,7 +432,7 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
         id = UUID.fromString(bundle.getString(UUID_KEY, UUID.randomUUID().toString()));
         name = bundle.getString(ROBOT_NAME_KEY, "");
         masterUriString = bundle.getString(MASTER_URI_KEY, "http://192.168.1.101:11311");
-        joystickTopic = bundle.getString(JOYSTICK_TOPIC_KEY, "/joy_teleop/cmd_vel");
+        joystickTopic = bundle.getString(JOYSTICK_TOPIC_KEY, "/cmd_vel");
         servoTopic = bundle.getString(SERVO_TOPIC_KEY, "/joy_teleop/servo");
         userCommandTopic = bundle.getString(USER_COMMAND_TOPIC_KEY, "/jarvis/user_command");
         userTalkTopic = bundle.getString(USER_TALK_TOPIC_KEY, "/jarvis/user_talk");
@@ -449,7 +449,7 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
     }
 
     public void load(@NonNull SharedPreferences prefs) {
-        joystickTopic = prefs.getString(RobotStorage.getPreferenceKey(JOYSTICK_TOPIC_KEY), "/joy_teleop/cmd_vel");
+        joystickTopic = prefs.getString(RobotStorage.getPreferenceKey(JOYSTICK_TOPIC_KEY), "/cmd_vel");
         servoTopic = prefs.getString(RobotStorage.getPreferenceKey(SERVO_TOPIC_KEY), "/joy_teleop/servo");
         userCommandTopic = prefs.getString(RobotStorage.getPreferenceKey(USER_COMMAND_TOPIC_KEY), "/jarvis/user_command");
         userTalkTopic = prefs.getString(USER_TALK_TOPIC_KEY, "/jarvis/user_talk");

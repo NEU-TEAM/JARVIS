@@ -24,6 +24,8 @@
     <!-- Param Values -->
     <string name="param_target_is_set">/comm/param/control/target/is_set</string>
     <string name="param_target_label">/comm/param/control/target/label</string>
+    <string name="param_action_target_is_set">/vision/param/action/target/is_set</string>
+    <string name="param_action_target_label">/vision/param/action/target/label</string>
     <string name="param_user_selected">/comm/param/control/target/selected</string>
     <string name="param_search_select_lock">/vision/select/param/lock</string>
     <string name="param_track_send_lock">/vision/track/param/lock</string>
