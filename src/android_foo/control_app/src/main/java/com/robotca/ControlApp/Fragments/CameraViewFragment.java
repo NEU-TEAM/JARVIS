@@ -319,7 +319,8 @@ public class CameraViewFragment extends RosFragment {
             }
         }
         if (maxValue == 1) {
-            params.set(getString(R.string.param_user_selected), maxValue);
+            params.set(getString(R.string.param_user_selected), 1);
+            maxValue = 0;
             return;
         }
         if (Objects.equals(editText.getText().toString(), "")) {
@@ -333,7 +334,7 @@ public class CameraViewFragment extends RosFragment {
             catch (Exception ex) {
                 consoleView.setText(R.string.select_not_valid);
             }
-            if (maxValue >= selected_num && selected_num >= 0) {
+            if (selected_num >= 0) {
                 params.set(getString(R.string.param_user_selected), selected_num);
             }
             else
