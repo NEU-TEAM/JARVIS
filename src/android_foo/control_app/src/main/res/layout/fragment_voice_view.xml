@@ -7,22 +7,11 @@
     android:layout_height="wrap_content"
     android:gravity="center">
 
-    <ToggleButton
-        tools:text="@string/voice_toggle_button"
+    <ImageButton
+        android:id="@+id/voice_button"
+        android:src="@drawable/voice_on"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/voice_toggle_button"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:textOff="@string/voice_feedback_off"
-        android:textOn="@string/voice_feedback_on" />
+        android:layout_height="wrap_content" />
 
-    <com.robotca.ControlApp.Views.VoiceView
-        android:id="@+id/voice_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/voice_toggle_button"
-        android:gravity="center"
-        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

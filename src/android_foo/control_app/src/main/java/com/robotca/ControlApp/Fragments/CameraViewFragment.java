@@ -81,7 +81,8 @@ public class CameraViewFragment extends RosFragment {
         //noinspection unchecked
         cameraView = (RosImageView<sensor_msgs.CompressedImage>) view.findViewById(R.id.camera_fragment_camera_view);
 
-        cameraView.setTopicName(PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("edittext_camera_topic", getString(R.string.camera_topic)));
+        cameraView.setTopicName(PreferenceManager.getDefaultSharedPreferences(
+                getActivity()).getString("edittext_camera_topic", getString(R.string.camera_topic)));
         cameraView.setMessageType(CompressedImage._TYPE);
         cameraView.setMessageToBitmapCallable(new BitmapFromCompressedImage());
 

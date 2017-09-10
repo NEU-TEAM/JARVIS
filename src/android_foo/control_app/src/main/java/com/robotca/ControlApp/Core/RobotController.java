@@ -80,13 +80,13 @@ public class RobotController implements NodeMain, Savable {
     private Int32MultiArray currentServoCommand;
 
     // Class for publish voice
-    private AudioPublisher audioPublisher;
-    private boolean voice_mode_isCommand = true;
+//    private AudioPublisher audioPublisher;
+//    private boolean voice_mode_isCommand = true;
 
-    private AudioManager audioManager;
-    private AudioSubscriber audioSubscriber;
+//    private AudioManager audioManager;
+//    private AudioSubscriber audioSubscriber;
     // Is robot talk by phone speaker
-    private boolean speakerOn = false;
+//    private boolean speakerOn = false;
 
     // Subscriber to NavSatFix data
     private Subscriber<NavSatFix> navSatFixSubscriber;
@@ -432,48 +432,48 @@ public class RobotController implements NodeMain, Savable {
         publishServo(pitch, yaw);
     }
 
-    public void publishVoice(boolean isPub) {
-        if (isPub) {
-            audioPublisher.play();
-        }
-        else {
-            audioPublisher.pause();
-        }
-    }
+//    public void publishVoice(boolean isPub) {
+//        if (isPub) {
+//            audioPublisher.play();
+//        }
+//        else {
+//            audioPublisher.pause();
+//        }
+//    }
 
-    /**
-     * Turn ON/OFF the speaker
-     */
-    public void changeSpeakerMode() {
-        speakerOn = !speakerOn;
-        if (speakerOn) {
-            audioSubscriber.play();
-        }
-        else {
-            audioSubscriber.pause();
-        }
-    }
-
-    public void changeVoiceMode() {
-        if (audioPublisher != null) {
-            audioPublisher.onShutdown();
-        }
-        String userCommandTopic = PreferenceManager.getDefaultSharedPreferences(context)
-                .getString(context.getString(R.string.prefs_user_command_topic_edittext_key),
-                        context.getString(R.string.user_command_topic));
-
-        String userTalkTopic = PreferenceManager.getDefaultSharedPreferences(context)
-                .getString(context.getString(R.string.prefs_user_talk_topic_edittext_key),
-                        context.getString(R.string.user_talk_topic));
-
-        voice_mode_isCommand = !voice_mode_isCommand;
-        if (voice_mode_isCommand)
-            audioPublisher = new AudioPublisher(userCommandTopic);
-        else
-            audioPublisher = new AudioPublisher(userTalkTopic);
-        audioPublisher.pause();
-        audioPublisher.onStart(this.connectedNode);
-    }
+//    /**
+//     * Turn ON/OFF the speaker
+//     */
+//    public void changeSpeakerMode() {
+//        speakerOn = !speakerOn;
+//        if (speakerOn) {
+//            audioSubscriber.play();
+//        }
+//        else {
+//            audioSubscriber.pause();
+//        }
+//    }
+//
+//    public void changeVoiceMode() {
+//        if (audioPublisher != null) {
+//            audioPublisher.onShutdown();
+//        }
+//        String userCommandTopic = PreferenceManager.getDefaultSharedPreferences(context)
+//                .getString(context.getString(R.string.prefs_user_command_topic_edittext_key),
+//                        context.getString(R.string.user_command_topic));
+//
+//        String userTalkTopic = PreferenceManager.getDefaultSharedPreferences(context)
+//                .getString(context.getString(R.string.prefs_user_talk_topic_edittext_key),
+//                        context.getString(R.string.user_talk_topic));
+//
+//        voice_mode_isCommand = !voice_mode_isCommand;
+//        if (voice_mode_isCommand)
+//            audioPublisher = new AudioPublisher(userCommandTopic);
+//        else
+//            audioPublisher = new AudioPublisher(userTalkTopic);
+//        audioPublisher.pause();
+//        audioPublisher.onStart(this.connectedNode);
+//    }
 
     /**
      * @return The default node name for the RobotController
@@ -500,7 +500,7 @@ public class RobotController implements NodeMain, Savable {
         if (!initialized && connectedNode != null) {
 
             // Create audioManager
-            audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
+//            audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
             // Start the topics
             refreshTopics();
 
@@ -627,24 +627,6 @@ public class RobotController implements NodeMain, Savable {
                 }
             }, 0, 50);
             publishVelocity = false;
-        }
-
-        if (audioPublisher == null
-                || !userCommandTopic.equals(audioPublisher.getDefaultNodeName().toString())) {
-            if (voice_mode_isCommand)
-                audioPublisher = new AudioPublisher(userCommandTopic);
-            else
-                audioPublisher = new AudioPublisher(userTalkTopic);
-            audioPublisher.pause();
-            audioPublisher.onStart(this.connectedNode);
-        }
-
-        if (audioSubscriber == null
-                || !voiceOutputTopic.equals(audioSubscriber.getDefaultNodeName().toString())) {
-
-            audioSubscriber = new AudioSubscriber(voiceOutputTopic, audioManager);
-            audioSubscriber.pause();
-            audioSubscriber.onStart(this.connectedNode);
         }
 
         // Refresh the NavSat Subscriber
@@ -784,13 +766,13 @@ public class RobotController implements NodeMain, Savable {
             movePublisher.shutdown();
         }
 
-        if (audioPublisher != null) {
-            audioPublisher.onShutdown();
-        }
-
-        if (audioSubscriber != null) {
-            audioSubscriber.onShutdown();
-        }
+//        if (audioPublisher != null) {
+//            audioPublisher.onShutdown();
+//        }
+//
+//        if (audioSubscriber != null) {
+//            audioSubscriber.onShutdown();
+//        }
 
         if (navSatFixSubscriber != null) {
             navSatFixSubscriber.shutdown();

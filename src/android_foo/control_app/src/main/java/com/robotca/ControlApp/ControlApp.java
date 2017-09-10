@@ -74,6 +74,9 @@ import java.util.List;
 public class ControlApp extends RosActivity implements ListView.OnItemClickListener,
         IWaypointProvider, AdapterView.OnItemSelectedListener {
 
+    private Talker talker;
+    private Listener listener;
+
     /** Notification ticker for the App */
     public static final String NOTIFICATION_TICKER = "JARVIS";
     /** Notification title for the App */
@@ -147,7 +150,7 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
      * Default Constructor.
      */
     public ControlApp() {
-        super(NOTIFICATION_TICKER, NOTIFICATION_TITLE, ROBOT_INFO.getUri());
+        super(NOTIFICATION_TITLE, NOTIFICATION_TICKER, ROBOT_INFO.getUri());
 
         waypoints = new LinkedList<>();
 
@@ -262,6 +265,9 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
         // Find the Joystick fragment
         voiceFragment = (VoiceFragment) getFragmentManager().findFragmentById(R.id.voice_fragment);
 
+        this.talker = voiceFragment.talker;
+        this.listener = voiceFragment.listener;
+
         // Create the RobotController
         controller = new RobotController(this);
 
@@ -371,6 +377,8 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
             this.nodeConfiguration =
                     NodeConfiguration.newPublic(local_network_address.getHostAddress(), getMasterUri());
 
+            this.nodeMainExecutor.execute(this.listener, this.nodeConfiguration.setNodeName("android/listener"));
+            this.nodeMainExecutor.execute(this.talker, this.nodeConfiguration.setNodeName("android/talker"));
 
             runOnUiThread(new Runnable() {
                 @Override
@@ -386,12 +394,12 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
                 }
             });
 
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    voiceFragment.invalidate();
-                }
-            });
+//            runOnUiThread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    voiceFragment.invalidate();
+//                }
+//            });
 
             //controller.setTopicName(PreferenceManager.getDefaultSharedPreferences(this).getString("edittext_joystick_topic", getString(R.string.joy_topic)));
             controller.initialize(nodeMainExecutor, nodeConfiguration);
@@ -405,7 +413,7 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
             controller.addOdometryListener(servoFragment.getJoystickView());
 
             // Add the JoystickView to the RobotController's odometry listener
-            controller.addOdometryListener(voiceFragment.getJoystickView());
+//            controller.addOdometryListener(voiceFragment.getJoystickView());
 
             // Create and add a WarningSystem
             controller.addLaserScanListener(warningSystem = new WarningSystem(this));
@@ -833,8 +841,8 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
         if (servoFragment.getControlMode() == controlMode)
             return;
 
-        if (voiceFragment.getControlMode() == controlMode)
-            return;
+//        if (voiceFragment.getControlMode() == controlMode)
+//            return;
 
         // Lock the orientation for tilt controls
         lockOrientation(controlMode == ControlMode.Tilt);
@@ -842,7 +850,7 @@ public class ControlApp extends RosActivity implements ListView.OnItemClickListe
         // Notify the Joystick on the new ControlMode
         joystickFragment.setControlMode(controlMode);
         servoFragment.setControlMode(controlMode);
-        voiceFragment.setControlMode(controlMode);
+//        voiceFragment.setControlMode(controlMode);
         hudFragment.toggleEmergencyStopUI(true);
 
         // If the ControlMode has an associated RobotPlan, run the plan

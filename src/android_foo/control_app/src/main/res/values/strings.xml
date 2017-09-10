@@ -11,8 +11,8 @@
     <string name="user_talk_topic">/jarvis/user_talk</string>
     <string name="voice_output_topic">/jarvis/audio</string>
     <string name="select_request_topic">/comm/msg/vision/select_request</string>
-    <string name="camera_topic">/rgb/image/compressed</string>
-    <string name="camera_labeled_topic">/search/labeled_image/compressed</string>
+    <string name="camera_topic">/vision/rgb/image_rect_color/compressed</string>
+    <string name="camera_labeled_topic">/vision/search/labeled_image/compressed</string>
     <string name="roi_topic">/jarvis/roi</string>
     <string name="vision_status_topic">/comm/msg/vision/mode</string>
     <string name="vision_console_topic">/comm/msg/vision/info</string>

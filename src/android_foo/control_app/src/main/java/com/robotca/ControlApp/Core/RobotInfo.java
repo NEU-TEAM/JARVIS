@@ -93,7 +93,7 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
         userCommandTopic = "/jarvis/user_command";
         userTalkTopic = "/jarvis/user_talk";
         voiceOutputTopic = "/jarvis/audio";
-        cameraTopic = "/rgb/image/compressed";
+        cameraTopic = "/vision/rgb/image_rect_color/compressed";
         laserTopic = "/scan";
         navsatTopic = "/navsat/fix";
         odometryTopic = "/odometry/filtered";
@@ -121,7 +121,7 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
      */
     public RobotInfo(UUID id, String name, String masterUriString, String joystickTopic,
                      String servoTopic, String userCommandTopic, String laserTopic,
-                     String cameraTopic,String navsatTopic,
+                     String cameraTopic, String navsatTopic,
                      String odometryTopic, String poseTopic, boolean reverseLaserScan,
                      boolean invertX, boolean invertY, boolean invertAngularVelocity) {
         this.id = id;
@@ -437,7 +437,7 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
         userCommandTopic = bundle.getString(USER_COMMAND_TOPIC_KEY, "/jarvis/user_command");
         userTalkTopic = bundle.getString(USER_TALK_TOPIC_KEY, "/jarvis/user_talk");
         voiceOutputTopic = bundle.getString(VOICE_OUTPUT_TOPIC_KEY, "jarvis/audio");
-        cameraTopic = bundle.getString(CAMERA_TOPIC_KEY, "/rgb/image/compressed");
+        cameraTopic = bundle.getString(CAMERA_TOPIC_KEY, "/vision/rgb/image_rect_color/compressed");
         laserTopic = bundle.getString(LASER_SCAN_TOPIC_KEY, "/scan");
         navsatTopic = bundle.getString(NAVSAT_TOPIC_KEY, "/navsat/fix");
         odometryTopic = bundle.getString(ODOMETRY_TOPIC_KEY, "/odometry/filtered");
@@ -454,7 +454,7 @@ public class RobotInfo implements Comparable<RobotInfo>, Savable {
         userCommandTopic = prefs.getString(RobotStorage.getPreferenceKey(USER_COMMAND_TOPIC_KEY), "/jarvis/user_command");
         userTalkTopic = prefs.getString(USER_TALK_TOPIC_KEY, "/jarvis/user_talk");
         voiceOutputTopic = prefs.getString(VOICE_OUTPUT_TOPIC_KEY, "jarvis/audio");
-        cameraTopic = prefs.getString(RobotStorage.getPreferenceKey(CAMERA_TOPIC_KEY), "/rgb/image/compressed");
+        cameraTopic = prefs.getString(RobotStorage.getPreferenceKey(CAMERA_TOPIC_KEY), "/vision/rgb/image_rect_color/compressed");
         laserTopic = prefs.getString(RobotStorage.getPreferenceKey(LASER_SCAN_TOPIC_KEY), "/scan");
         navsatTopic = prefs.getString(RobotStorage.getPreferenceKey(NAVSAT_TOPIC_KEY), "/navsat/fix");
         odometryTopic = prefs.getString(RobotStorage.getPreferenceKey(ODOMETRY_TOPIC_KEY), "/odometry/filtered");

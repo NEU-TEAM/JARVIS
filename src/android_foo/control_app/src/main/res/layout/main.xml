@@ -43,32 +43,26 @@
                 <fragment
                     android:id="@+id/servo_fragment"
                     android:name="com.robotca.ControlApp.Fragments.ServoFragment"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/fragment_servo_view" />
 
-                <LinearLayout
-                    android:id="@+id/voice_collection"
-                    android:orientation="vertical"
+                <fragment
+                    android:id="@+id/voice_fragment"
+                    android:name="com.robotca.ControlApp.Fragments.VoiceFragment"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_gravity="bottom">
-
-                    <fragment
-                        android:id="@+id/voice_fragment"
-                        android:name="com.robotca.ControlApp.Fragments.VoiceFragment"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout="@layout/fragment_voice_view"
-                        tools:layout="@layout/fragment_voice_view"
-                        android:layout_gravity="center" />
-                </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:layout="@layout/fragment_voice_view"
+                    tools:layout="@layout/fragment_voice_view"
+                    android:layout_gravity="center" />
 
                 <fragment
                     android:id="@+id/joystick_fragment"
                     android:name="com.robotca.ControlApp.Fragments.JoystickFragment"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/fragment_joystick_view" />
 
